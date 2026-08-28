@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>Mesa editorial</title>
+  <link rel="icon" href="../assets/brand/covers/volume-1-front-figma.webp?v=488b7e8" type="image/webp">
+  <link rel="stylesheet" href="../__tokens.css?v=488b7e8">
+  <link rel="stylesheet" href="./dev.css?v=488b7e8">
+  <script src="../review-config.js?v=488b7e8"></script>
+</head>
+<body>
+  <a class="skip-link" href="#workspace">Ir para a área de análise</a>
+  <header class="desk-header">
+    <a class="brand" href="./" aria-label="Início da mesa editorial">
+      <span class="brand-kicker">Mesa editorial</span>
+      <strong id="project-name">Jornada Ser Mulher</strong>
+    </a>
+    <nav class="workspace-switcher" aria-label="Etapas da análise">
+      <button id="view-library" class="view-button" type="button" aria-pressed="true">
+        <span class="view-number" aria-hidden="true">01</span><span><strong data-view-label>Jornadas</strong><small data-view-hint>Mulheres e sete dias</small></span>
+      </button>
+      <button id="view-system" class="view-button" type="button" aria-pressed="false">
+        <span class="view-number" aria-hidden="true">02</span><span><strong data-view-label>Regras</strong><small data-view-hint>Linguagem e produção</small></span>
+      </button>
+      <button id="view-book" class="view-button" type="button" aria-pressed="false">
+        <span class="view-number" aria-hidden="true">03</span><span><strong data-view-label>Livro</strong><small data-view-hint>Leitura paginada</small></span>
+      </button>
+      <button id="view-management" class="view-button" type="button" aria-pressed="false">
+        <span class="view-number" aria-hidden="true">04</span><span><strong data-view-label>Gestão</strong><small data-view-hint>Entrega e pendências</small></span>
+      </button>
+    </nav>
+    <div class="build-state" id="build-state" data-state="ready" role="status" aria-live="polite">
+      <span class="state-dot"></span>
+      <span id="state-label">Conectando…</span>
+    </div>
+    <button class="book-focus-entry" id="book-focus-entry" type="button" aria-controls="workspace" aria-pressed="false" hidden>
+      <i aria-hidden="true"></i>
+      <span><strong>Modo leitura</strong><small>Ocultar os controles</small></span>
+    </button>
+  </header>
+
+  <section class="context-ribbon" aria-label="Contexto da área atual">
+    <div class="context-intro">
+      <span class="eyebrow" id="context-kicker">01 · jornadas e conteúdo</span>
+      <h1 id="context-title">Explore as vinte jornadas.</h1>
+      <p id="context-copy">Escolha uma mulher para acompanhar sua semana, seus sete dias e as imagens que dão forma ao percurso.</p>
+    </div>
+
+    <dl class="audit-summary" aria-label="Cobertura da auditoria">
+      <div><dt id="metric-label-1">Mulheres</dt><dd id="women-count">20</dd></div>
+      <div><dt id="metric-label-2">Dias lidos</dt><dd id="days-count">140</dd></div>
+      <div><dt id="metric-label-3">Elementos recorrentes</dt><dd id="universal-count">12</dd></div>
+      <div><dt id="metric-label-4">Recursos especiais</dt><dd id="exception-count">—</dd></div>
+    </dl>
+
+    <button class="review-toggle" id="review-toggle" type="button" aria-expanded="false" aria-controls="review-tray">
+      <span>Guia de análise</span><i aria-hidden="true"></i>
+    </button>
+
+  </section>
+
+  <section class="review-tray" id="review-tray" aria-label="Critérios de revisão" hidden>
+    <section class="decision-guide" aria-label="Estado das decisões">
+      <span class="eyebrow">Estado do projeto</span>
+      <p><b>Definido</b><span data-decision-state="defined">conteúdo, ordem, função e abertura/encerramento em cor.</span></p>
+      <p><b>Em desenho</b><span data-decision-state="in_design">tipografia, ornamentos e aplicação dos componentes.</span></p>
+      <p><b>Depende do físico</b><span data-decision-state="physical_proof">margens finais, encadernação e reprodução de tinta.</span></p>
+    </section>
+
+    <section class="audit-guide">
+      <span class="eyebrow">Percurso de análise</span>
+      <ol id="audit-steps"></ol>
+    </section>
+
+    <aside class="review-scope">
+      <span class="eyebrow">Sobre esta área</span>
+      <p id="scope-note">Cada jornada reúne narrativa, direção visual e aplicação no livro em um único percurso de análise.</p>
+      <details class="desk-glossary">
+        <summary>Entender os termos usados</summary>
+        <dl id="desk-glossary-list"></dl>
+      </details>
+      <button id="rebuild" type="button">Atualizar o livro agora</button>
+    </aside>
+  </section>
+
+  <main class="workspace-stage">
+    <section class="viewer-shell" id="workspace" aria-label="Jornadas das 20 mulheres">
+      <div class="viewer-message" id="viewer-message" hidden></div>
+      <button class="book-focus-exit" id="book-focus-exit" type="button" hidden>
+        <span>Sair da tela cheia</span><kbd>Esc</kbd>
+      </button>
+      <iframe id="audit-viewer" title="Área principal de auditoria" src="./concept.html?v=488b7e8#biblioteca" allow="fullscreen"></iframe>
+    </section>
+  </main>
+
+  <script type="module" src="./dev.js?v=488b7e8"></script>
+</body>
+</html>

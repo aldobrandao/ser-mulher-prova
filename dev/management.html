@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>Gestão do projeto · Jornada Ser Mulher</title>
+  <link rel="icon" href="../assets/brand/covers/volume-1-front-figma.webp?v=488b7e8" type="image/webp">
+  <script>
+    const params = new URLSearchParams(location.search);
+    if (!params.has("embed")) location.replace("./?view=management");
+    else document.documentElement.classList.add("is-embedded");
+  </script>
+  <link rel="stylesheet" href="../__tokens.css?v=488b7e8">
+  <link rel="stylesheet" href="./management.css?v=488b7e8">
+  <script src="../review-config.js?v=488b7e8"></script>
+</head>
+<body>
+  <header class="management-hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Plano oficial · atualização automática</p>
+      <h1>Da decisão à entrega.</h1>
+      <p>O que está pronto, o que falta e o que depende de terceiros. Esta mesa lê diretamente os arquivos oficiais do projeto.</p>
+    </div>
+    <div class="hero-progress" aria-label="Progresso geral">
+      <div class="progress-orbit" id="progress-orbit"><strong id="progress-percent">—</strong><span>concluído</span></div>
+      <div><span class="sync-label"><i></i>Sincronizado</span><strong id="sync-time">Lendo fontes…</strong><small id="sync-commit">repositório</small></div>
+    </div>
+  </header>
+
+  <main class="management-main" id="management-root" aria-live="polite">
+    <section class="next-action" aria-labelledby="next-action-title">
+      <span>Faça agora</span>
+      <strong id="next-action-title">Identificando a próxima ação que destrava o livro…</strong>
+    </section>
+
+    <section class="summary-grid" aria-label="Resumo da execução">
+      <article class="summary-card summary-card--wide"><span>Progresso geral</span><strong><b id="completed-count">—</b> de <b id="total-count">—</b> tarefas</strong><div class="linear-progress"><i id="progress-bar"></i></div></article>
+      <article class="summary-card"><span>Em aberto</span><strong id="pending-count">—</strong><small>tarefas no checklist</small></article>
+      <article class="summary-card"><span>Fases</span><strong id="phase-count">—</strong><small id="current-phase-label">lendo caminho crítico</small></article>
+      <article class="summary-card"><span>Decisões abertas</span><strong id="decision-count">—</strong><small>registradas no projeto</small></article>
+      <article class="summary-card"><span>Dependências externas</span><strong id="dependency-count">—</strong><small>aguardam insumos editoriais</small></article>
+    </section>
+
+    <section class="print-status" aria-labelledby="print-status-title">
+      <header>
+        <div><p class="eyebrow">Livro impresso · medição vigente</p><h2 id="print-status-title">Paginação e artes, sem misturar estimativa com fechamento.</h2></div>
+        <p id="print-measured-at">Lendo a última paginação integral…</p>
+      </header>
+      <div class="print-volume-grid" id="print-volume-grid"></div>
+      <div class="print-production-note">
+        <p><strong id="print-color-rule">Aberturas e encerramentos em cor; demais páginas em preto.</strong><span id="print-artwork-status">Conferindo artes vinculadas…</span></p>
+        <p id="print-quotation-status"></p>
+      </div>
+    </section>
+
+    <div class="management-layout">
+      <section class="execution-panel" aria-labelledby="execution-title">
+        <header class="panel-heading">
+          <div><p class="eyebrow">Execução por fase</p><h2 id="execution-title">O que já foi feito e o que falta.</h2></div>
+          <div class="task-tools">
+            <label class="task-search"><span>Buscar tarefa</span><input id="task-search" type="search" placeholder="Ex.: tipografia, capa, gráfica"></label>
+            <div class="task-filters" aria-label="Filtrar tarefas">
+              <button type="button" data-filter="all" aria-pressed="true">Todas</button>
+              <button type="button" data-filter="pending" aria-pressed="false">Em aberto</button>
+              <button type="button" data-filter="completed" aria-pressed="false">Concluídas</button>
+            </div>
+          </div>
+        </header>
+        <p class="result-status" id="result-status" role="status"></p>
+        <div class="phase-list" id="phase-list"></div>
+      </section>
+
+      <aside class="management-sidebar">
+        <section class="attention-card attention-card--decisions">
+          <header><span>Decisões abertas</span><b id="decision-badge">—</b></header>
+          <ol id="decision-list"></ol>
+        </section>
+        <section class="attention-card attention-card--external">
+          <header><span>Insumos externos</span><b id="dependency-badge">—</b></header>
+          <ol id="dependency-list"></ol>
+        </section>
+        <details class="source-card">
+          <summary>Estado editorial vigente</summary>
+          <div id="current-state"></div>
+        </details>
+        <details class="source-card">
+          <summary>Itens cancelados</summary>
+          <ul id="cancelled-list"></ul>
+        </details>
+        <section class="repository-card">
+          <p class="eyebrow">Sincronização</p>
+          <dl>
+            <div><dt>Checklist</dt><dd><code>docs/ROADMAP.md</code></dd></div>
+            <div><dt>Estado e decisões</dt><dd><code>PROJECT.md</code></dd></div>
+            <div><dt>Ramo</dt><dd id="repo-branch">—</dd></div>
+            <div><dt>Workspace</dt><dd id="repo-state">—</dd></div>
+          </dl>
+          <p>Para atualizar este painel, altere as fontes canônicas. A mesa se recompõe automaticamente no ambiente local e a versão online muda na próxima publicação.</p>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <template id="empty-template"><div class="empty-state"><strong>Nenhuma tarefa encontrada.</strong><span>Ajuste o filtro ou o termo de busca.</span></div></template>
+  <script type="module" src="./management.js?v=488b7e8"></script>
+</body>
+</html>

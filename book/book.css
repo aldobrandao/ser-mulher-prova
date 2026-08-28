@@ -1,0 +1,4669 @@
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("../assets/fonts/cormorant-garamond/static/CormorantGaramond-Regular.ttf?v=488b7e8") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("../assets/fonts/cormorant-garamond/static/CormorantGaramond-Medium.ttf?v=488b7e8") format("truetype");
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("../assets/fonts/cormorant-garamond/static/CormorantGaramond-SemiBold.ttf?v=488b7e8") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("../assets/fonts/cormorant-garamond/static/CormorantGaramond-Italic.ttf?v=488b7e8") format("truetype");
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("../assets/fonts/cormorant-garamond/static/CormorantGaramond-MediumItalic.ttf?v=488b7e8") format("truetype");
+  font-style: italic;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/poppins/Poppins-Regular.ttf?v=488b7e8") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/poppins/Poppins-SemiBold.ttf?v=488b7e8") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Glendora";
+  src: url("../assets/fonts/glendora/Glendora.otf?v=488b7e8") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+:root {
+  --color-brand-volume-1: #405e6c;
+  --color-brand-volume-2: #6d313a;
+  --color-brand-burgundy: #6c353b;
+  --color-brand-cream: #e4ddd5;
+  --color-brand-blue-light: #c6dfeb;
+  --color-brand-rose: #d7bcbf;
+  --color-brand-sand: #d5b089;
+  --color-paper: #f3ebdd;
+  --color-paper-deep: #e7d4b3;
+  --color-ink: #262626;
+  --color-interior-heading: #1a1a1a;
+  --color-interior-secondary: #595959;
+  --color-interior-ornament: #333333;
+  --color-interior-rule: #b3b3b3;
+  --color-interior-wash: #e6e6e6;
+  --color-ink-soft: #595959;
+  --color-glass-sky: #99a7a9;
+  --color-glass-teal: #687370;
+  --color-glass-blush: #bc886c;
+  --color-glass-wine: #855349;
+  --color-glass-ochre: #c29470;
+  --color-came-bronze: #825a3c;
+  --color-white: #ffffff;
+  --color-page-background: var(--color-paper);
+  --color-text-primary: var(--color-ink);
+  --color-text-secondary: var(--color-interior-secondary);
+  --color-line: var(--color-interior-rule);
+  --color-heading: var(--color-interior-heading);
+  --color-meditative-surface: var(--color-interior-wash);
+  --color-prayer-mark: var(--color-interior-ornament);
+  --color-accent-quiet: var(--color-interior-secondary);
+  --color-accent-growth: var(--color-interior-ornament);
+  --color-accent-tender: var(--color-interior-secondary);
+  --color-accent-depth: var(--color-interior-heading);
+  --color-accent-light: var(--color-interior-rule);
+  --color-volume-1-background: var(--color-brand-volume-1);
+  --color-volume-2-background: var(--color-brand-volume-2);
+  --color-brand-on-brand: var(--color-brand-cream);
+  --space-hairline: 0.25mm;
+  --space-xs: 1.5mm;
+  --space-sm: 3mm;
+  --space-md: 5mm;
+  --space-lg: 8mm;
+  --space-xl: 12mm;
+  --space-xxl: 18mm;
+  --stroke-subtle: 0.35mm;
+  --stroke-quote: 0.4mm;
+  --stroke-emphasis: 0.8mm;
+  --stroke-image: 0.36mm;
+  --font-editorial-family: "Cormorant Garamond";
+  --font-label-family: "Poppins";
+  --font-accent-family: "Glendora";
+  --reading-size: 11.6pt;
+  --reading-leading: 16pt;
+  --reading-weight: 400;
+  --label-size: 7.5pt;
+  --label-leading: 10pt;
+  --label-weight: 600;
+  --display-weight: 500;
+  --trim-width: 160mm;
+  --trim-height: 230mm;
+  --bleed: 3mm;
+  --margin-top: 17mm;
+  --margin-bottom: 19mm;
+  --margin-inner: 22mm;
+  --margin-outer: 15mm;
+}
+
+@page {
+  size: var(--trim-width) var(--trim-height);
+  bleed: var(--bleed);
+  marks: none;
+  margin-top: var(--margin-top);
+  margin-bottom: var(--margin-bottom);
+  background: var(--color-paper);
+}
+@page :left {
+  margin-left: var(--margin-outer);
+  margin-right: var(--margin-inner);
+  @bottom-left {
+    content: none;
+  }
+  @bottom-center {
+    width: 18mm;
+    height: 12mm;
+    padding-top: 4.2mm;
+    background: none;
+    color: var(--color-ink);
+    content: counter(page);
+    font: 500 10pt/1 var(--font-editorial-family), serif;
+  }
+  @top-left {
+    content: string(running-woman, first);
+    color: var(--color-ink-soft);
+    font: 600 7pt/1 var(--font-label-family), sans-serif;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  @top-right {
+    content: element(day-page-progress);
+    color: var(--color-ink-soft);
+    font: 600 7pt/1 var(--font-label-family), sans-serif;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+}
+
+@page :right {
+  margin-left: var(--margin-inner);
+  margin-right: var(--margin-outer);
+  @bottom-right {
+    content: none;
+  }
+  @bottom-center {
+    width: 18mm;
+    height: 12mm;
+    padding-top: 4.2mm;
+    background: none;
+    color: var(--color-ink);
+    content: counter(page);
+    font: 500 10pt/1 var(--font-editorial-family), serif;
+  }
+  @top-right {
+    content: element(day-page-progress);
+    color: var(--color-ink-soft);
+    font: 600 7pt/1 var(--font-label-family), sans-serif;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  @top-left {
+    content: string(running-woman, first);
+    color: var(--color-ink-soft);
+    font: 600 7pt/1 var(--font-label-family), sans-serif;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+}
+
+@page :blank {
+  background: var(--color-paper);
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+  @bottom-center { content: none; }
+}
+
+@page cover {
+  margin: 0;
+  background: var(--color-brand-volume-1);
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+  @bottom-center { content: none; }
+}
+
+@page cover-volume-1 {
+  margin: 0;
+  background: var(--color-brand-volume-1);
+  counter-reset: page 0;
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+  @bottom-center { content: none; }
+}
+
+@page cover-volume-2 {
+  margin: 0;
+  background: var(--color-brand-volume-2);
+  counter-reset: page 0;
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+  @bottom-center { content: none; }
+}
+
+@page cover-volume-1:blank {
+  background: var(--color-paper);
+}
+
+@page cover-volume-2:blank {
+  background: var(--color-paper);
+}
+
+@page title {
+  background: var(--color-paper);
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+  @bottom-center { content: none; }
+}
+
+@page inside-front-cover {
+  margin: 0;
+  background: var(--color-paper);
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+  @bottom-center { content: none; }
+}
+
+@page front-matter {
+  background: var(--color-paper);
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+  @bottom-center { content: none; }
+}
+
+/* O pré-textual é contado desde o início do volume, mas o fólio só aparece
+   quando começa a leitura editorial. Capa, verso, folha de rosto, expediente
+   e dedicatória permanecem silenciosos; Introdução, guia, autoria e índice
+   exibem a posição física exata em algarismos arábicos, como o restante do
+   livro. */
+@page front-matter-folio {
+  background: var(--color-paper);
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+  @bottom-center {
+    width: 18mm;
+    height: 10mm;
+    padding-top: 4mm;
+    background: none;
+    color: var(--color-ink-soft);
+    content: counter(page);
+    font: 400 8.5pt/1 var(--font-editorial-family), serif;
+  }
+}
+
+@page opening {
+  margin: 0;
+  background: var(--color-brand-volume-1);
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+
+@page cover:blank {
+  background: var(--color-paper);
+}
+
+@page opening:blank {
+  background: var(--color-paper);
+}
+
+@page colophon {
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+  @bottom-center { content: none; }
+}
+
+* { box-sizing: border-box; }
+
+html {
+  color: var(--color-ink);
+  background: var(--color-paper);
+  font-family: var(--font-editorial-family), serif;
+  font-size: var(--reading-size);
+  font-weight: var(--reading-weight);
+  line-height: var(--reading-leading);
+  hyphens: auto;
+  hyphenate-limit-chars: 7 3 3;
+  text-rendering: optimizeLegibility;
+}
+
+body { margin: 0; }
+
+p {
+  margin: 0 0 0.68em;
+  orphans: 3;
+  widows: 3;
+}
+
+/* Correções ópticas comprovadas: não abrir O Texto de Hoje com só uma ou duas linhas. */
+.live-book .devotional-day:is([data-week="5"], [data-week="7"])[data-day="1"]
+  .component-reading > .component-heading + p {
+  break-after: avoid-page;
+}
+
+em { font-weight: 400; }
+
+.section-kicker,
+.eyebrow,
+.opening-author {
+  margin: 0;
+  color: var(--color-heading);
+  font: var(--label-weight) var(--label-size)/var(--label-leading) var(--font-label-family), sans-serif;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.cover {
+  page: cover;
+  position: relative;
+  width: var(--trim-width);
+  height: var(--trim-height);
+  overflow: hidden;
+  break-after: page;
+  background: var(--color-brand-volume-1);
+}
+
+.cover.volume-1 { page: cover-volume-1; }
+.cover.volume-2 { page: cover-volume-2; background: var(--color-brand-volume-2); }
+
+.cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.title-page {
+  page: title;
+  min-height: 184mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 52mm 0 8mm;
+  text-align: center;
+  break-before: page;
+  break-after: page;
+}
+
+.title-lockup .script {
+  display: block;
+  margin: 0 0 -3mm;
+  color: var(--color-heading);
+  font: 400 42pt/.94 var(--font-accent-family), cursive;
+}
+
+.inside-front-cover-blank {
+  page: inside-front-cover;
+  width: var(--trim-width);
+  height: var(--trim-height);
+  overflow: hidden;
+  break-after: page;
+  background: var(--color-paper);
+}
+
+@page volume-closing {
+  margin: 0;
+  background: var(--color-paper);
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+  @bottom-center { content: none; }
+}
+
+@page back-cover-volume-1 {
+  margin: 0;
+  background: var(--color-brand-volume-1);
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+  @bottom-center { content: none; }
+}
+
+@page back-cover-volume-2 {
+  margin: 0;
+  background: var(--color-brand-volume-2);
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+  @bottom-center { content: none; }
+}
+
+.title-lockup h1 {
+  margin: 0;
+  font-size: 48pt;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.title-lockup .tagline {
+  margin: 5mm 0 0;
+  font: 500 9pt/1.25 var(--font-label-family), sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.title-meta {
+  color: var(--color-ink-soft);
+  font: 400 7.5pt/1.6 var(--font-label-family), sans-serif;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.title-meta p { margin: 0; }
+
+.volume-closing-page {
+  position: relative;
+  page: volume-closing;
+  display: flex;
+  width: var(--trim-width);
+  height: var(--trim-height);
+  padding: 28mm 22mm 22mm;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-paper);
+  break-before: page;
+  break-after: page;
+  text-align: center;
+}
+
+.volume-closing-page .title-lockup { margin-top: -12mm; }
+
+.volume-closing-meta {
+  position: absolute;
+  right: 22mm;
+  bottom: 19mm;
+  left: 22mm;
+  margin: 0;
+  color: var(--color-ink-soft);
+  font: 500 7pt/1.3 var(--font-label-family), sans-serif;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.back-cover {
+  position: relative;
+  display: flex;
+  width: var(--trim-width);
+  height: var(--trim-height);
+  padding: 20mm 20mm 18mm;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+  break-before: page;
+  color: var(--color-paper);
+}
+
+.back-cover.volume-1 {
+  page: back-cover-volume-1;
+  background: var(--color-brand-volume-1);
+}
+
+.back-cover.volume-2 {
+  page: back-cover-volume-2;
+  background: var(--color-brand-volume-2);
+}
+
+.back-cover-lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-paper);
+  text-align: center;
+}
+
+.back-cover-lockup span {
+  margin-bottom: -2mm;
+  font: 400 39pt/.86 var(--font-accent-family), cursive;
+}
+
+.back-cover-lockup strong {
+  font: 500 30pt/.94 var(--font-editorial-family), serif;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+}
+
+.back-cover-lockup em {
+  margin-top: 3mm;
+  font: 600 7.2pt/1 var(--font-label-family), sans-serif;
+  font-style: normal;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.back-cover-copy {
+  width: 100%;
+  font: 400 9.6pt/1.38 var(--font-editorial-family), serif;
+  text-align: left;
+}
+
+.back-cover-blurb {
+  position: absolute;
+  top: 68mm;
+  right: 22mm;
+  left: 22mm;
+}
+
+.back-cover-blurb p { margin: 0 0 4.5mm; }
+
+.back-cover-author {
+  position: absolute;
+  top: 137mm;
+  right: 22mm;
+  left: 22mm;
+  padding-top: 5mm;
+  border-top: var(--space-hairline) solid color-mix(in srgb, var(--color-paper) 48%, transparent);
+}
+
+.back-cover-author p { margin: 0; }
+.back-cover-author p:first-child {
+  margin-bottom: 4mm;
+  font: 600 11pt/1.2 var(--font-editorial-family), serif;
+}
+.back-cover-author p:not(:first-child) {
+  margin-bottom: 1.2mm;
+  font: 600 6.8pt/1.25 var(--font-label-family), sans-serif;
+  letter-spacing: .03em;
+}
+
+.back-cover-barcode {
+  position: absolute;
+  bottom: 11mm;
+  left: 50%;
+  width: 52mm;
+  margin: 0;
+  padding: 3mm 3.5mm 2.5mm;
+  background: var(--color-paper);
+  color: var(--color-black);
+  transform: translateX(-50%);
+}
+
+.back-cover-barcode img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.legal-isbn { margin-top: 2.5mm; }
+
+.legal-page,
+.dedication-page {
+  page: front-matter;
+  min-height: 184mm;
+  break-after: page;
+}
+
+.legal-page {
+  padding-top: 8mm;
+  font-size: 8.8pt;
+  line-height: 11.8pt;
+}
+
+.legal-copy {
+  margin-top: 13mm;
+  text-align: left;
+}
+
+.legal-copy p { margin-bottom: 2.4mm; }
+
+.credits {
+  margin: 8mm 0 0;
+  padding-top: 5mm;
+  border-top: var(--space-hairline) solid color-mix(in srgb, var(--color-line) 55%, transparent);
+}
+
+.credits div {
+  display: grid;
+  grid-template-columns: 34mm 1fr;
+  gap: 3mm;
+  margin-bottom: 1.2mm;
+}
+
+.credits dt {
+  font: 600 6.6pt/1.35 var(--font-label-family), sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.credits dd { margin: 0; }
+
+.cip-reserved {
+  margin-top: 10mm;
+  padding: 5mm 0 0;
+  border-top: var(--space-hairline) solid var(--color-line);
+  color: var(--color-ink-soft);
+}
+
+.cip-reserved strong {
+  font: 600 6.6pt/1.2 var(--font-label-family), sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cip-reserved p { margin-top: 1.5mm; }
+
+.dedication-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 19mm 5mm 12mm;
+  break-before: page;
+}
+
+.dedication-page .section-kicker { text-align: center; }
+
+.dedication-copy {
+  max-width: 92mm;
+  margin: 20mm auto 0;
+  font-size: 13pt;
+  line-height: 18pt;
+  text-align: center;
+}
+
+.dedication-copy p { margin-bottom: 6mm; }
+
+.epigraph {
+  max-width: 86mm;
+  margin: 22mm auto 0;
+  padding: 0;
+  border: 0;
+  color: var(--color-heading);
+  font-size: 12pt;
+  font-style: italic;
+  line-height: 16pt;
+  text-align: center;
+}
+
+.epigraph cite {
+  display: block;
+  margin-top: 3mm;
+  color: var(--color-ink-soft);
+  font: 600 6.5pt/1.2 var(--font-label-family), sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.editorial-section {
+  page: front-matter-folio;
+  break-before: page;
+}
+.introduction { break-before: page; }
+
+.editorial-title {
+  position: relative;
+  margin: 10mm 0 13mm;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.editorial-title::after { content: none; }
+
+.editorial-title.compact { margin-bottom: 10mm; }
+
+.introduction .editorial-title { margin-bottom: 7mm; }
+
+.editorial-title h1 {
+  margin: 2mm 0 0;
+  color: var(--color-heading);
+  font-size: 28pt;
+  font-weight: 500;
+  line-height: 0.98;
+}
+
+.editorial-prose { text-align: justify; }
+
+.editorial-prose p { margin-bottom: 0; }
+
+.editorial-prose p + p { text-indent: 5mm; }
+
+.introduction .editorial-prose {
+  font-size: 10.8pt;
+  line-height: 14.5pt;
+}
+
+.editorial-signoff {
+  margin-top: 3mm;
+  break-inside: avoid;
+}
+
+.editorial-signoff p {
+  margin: 0;
+  text-indent: 0;
+}
+
+.editorial-signoff p + p { margin-top: 1.5mm; }
+
+.guide-content > p:first-child {
+  max-width: 105mm;
+  margin-bottom: 8mm;
+  font-size: 12.5pt;
+  line-height: 16pt;
+}
+
+.guide-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: guide;
+}
+
+.guide-list li {
+  display: grid;
+  grid-template-columns: 8mm 34mm 1fr;
+  gap: 4mm;
+  padding: 2.6mm 0;
+  border-top: var(--space-hairline) solid color-mix(in srgb, var(--color-line) 38%, transparent);
+  break-inside: avoid;
+  counter-increment: guide;
+}
+
+.guide-list li::before {
+  content: counter(guide, decimal-leading-zero);
+  color: var(--color-heading);
+  font: 500 12pt/1 var(--font-editorial-family), serif;
+}
+
+.guide-list strong {
+  color: var(--color-heading);
+  font-size: 10.5pt;
+  font-weight: 600;
+  line-height: 13pt;
+}
+
+.guide-list span {
+  font-size: 9.8pt;
+  line-height: 12.5pt;
+}
+
+.guide-note {
+  margin-top: 3mm;
+  padding-top: 2mm;
+  border-top: var(--space-hairline) solid var(--color-line);
+  color: var(--color-ink-soft);
+  font-style: italic;
+}
+
+.author-page { break-after: page; }
+
+.volume-index {
+  page: front-matter-folio;
+  min-height: 184mm;
+  padding: 8mm 3mm 6mm;
+  break-before: page;
+  break-after: page;
+}
+
+.app-callout {
+  page: front-matter-folio;
+  display: flex;
+  min-height: 184mm;
+  padding: 24mm 12mm 22mm;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  break-before: page;
+  break-after: page;
+  color: var(--color-ink);
+  text-align: center;
+}
+
+.app-callout-mark {
+  display: flex;
+  margin-bottom: 8mm;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-heading);
+}
+
+.app-callout-mark img {
+  width: 16mm;
+  height: 18.4mm;
+  margin-bottom: 4mm;
+  filter: grayscale(1) contrast(1.35);
+  opacity: .62;
+}
+
+.app-callout-mark span {
+  font: 400 30pt/.82 var(--font-accent-family), cursive;
+}
+
+.app-callout-copy {
+  display: flex;
+  min-height: 30mm;
+  max-width: 102mm;
+  align-items: center;
+  font: 400 15pt/1.38 var(--font-editorial-family), serif;
+  hyphens: none;
+  text-wrap: balance;
+}
+
+.app-callout-copy::first-line {
+  color: var(--color-heading);
+  font-weight: 500;
+}
+
+.app-qr-slot {
+  width: 60mm;
+  height: 60mm;
+  padding: 0;
+  background: transparent;
+}
+
+.app-qr-slot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.app-qr-frame {
+  position: relative;
+  display: grid;
+  width: 64mm;
+  height: 64mm;
+  margin-top: 10mm;
+  place-items: center;
+}
+
+.app-qr-frame::before,
+.app-qr-frame::after { content: none; }
+
+.volume-index > header {
+  max-width: 104mm;
+  margin: 0 auto 12mm;
+  text-align: center;
+}
+
+.volume-index > header h1 {
+  margin: 2mm 0 3mm;
+  color: var(--color-heading);
+  font: 500 30pt/.98 var(--font-editorial-family), serif;
+  text-wrap: balance;
+}
+
+.volume-index > header > p:last-child {
+  margin: 0;
+  color: var(--color-ink-soft);
+  font: 500 8pt/1.35 var(--font-label-family), sans-serif;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.volume-index ol {
+  width: 112mm;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.volume-index li {
+  display: grid;
+  min-height: 13mm;
+  padding: 2.2mm 0;
+  border-top: var(--space-hairline) solid color-mix(in srgb, var(--color-line) 42%, transparent);
+  grid-template-columns: 12mm minmax(0, 1fr);
+  column-gap: var(--space-sm);
+  align-items: center;
+  break-inside: avoid;
+}
+
+.volume-index li:last-child {
+  border-bottom: var(--space-hairline) solid color-mix(in srgb, var(--color-line) 42%, transparent);
+}
+
+.volume-index li > span {
+  color: var(--color-ink-soft);
+  font: 500 11pt/1 var(--font-editorial-family), serif;
+  text-align: center;
+}
+
+.volume-index li > div { min-width: 0; }
+
+.volume-index li strong,
+.volume-index li small { display: block; }
+
+.volume-index li strong {
+  color: var(--color-heading);
+  font: 500 14pt/1.05 var(--font-editorial-family), serif;
+}
+
+.volume-index li small {
+  margin-top: 1mm;
+  color: var(--color-ink-soft);
+  font: 600 6.4pt/1.2 var(--font-label-family), sans-serif;
+  letter-spacing: .065em;
+  text-transform: uppercase;
+}
+
+/* Miolo pré-textual — herda diretamente o Percurso aprovado em Sara.
+   Não cria moldura, losango ou sistema ornamental paralelo. */
+.dedication-page.front-matter-page {
+  justify-content: flex-start;
+  padding: 13mm 8mm 12mm;
+  text-align: center;
+}
+
+.dedication-page .section-kicker,
+.editorial-title .section-kicker,
+.volume-index > header .section-kicker {
+  margin: 0;
+  color: var(--color-heading);
+  font: 400 36pt/.92 var(--font-accent-family), cursive;
+  letter-spacing: 0;
+  text-align: center;
+  text-transform: none;
+}
+
+.dedication-page .section-kicker::after,
+.editorial-title::after,
+.volume-index > header::after {
+  display: none;
+  content: none;
+}
+
+.dedication-page .section-kicker::after {
+  display: block;
+  width: 44mm;
+  height: 16mm;
+  margin: 4mm auto 0;
+  background: url("../assets/ilustracoes/specimens/oficial/editorial/raster/dedication-side-bouquet-stained-glass-imagegen-v002.webp?v=488b7e8") center / contain no-repeat;
+  content: "";
+  opacity: .7;
+}
+
+.dedication-copy {
+  margin-top: 12mm;
+  color: var(--color-ink);
+  font-size: 13.5pt;
+  line-height: 18pt;
+}
+
+.epigraph {
+  margin-top: auto;
+  color: var(--color-heading);
+}
+
+.editorial-section.front-matter-page {
+  min-height: 184mm;
+  padding: 5mm 4mm 5mm;
+}
+
+.editorial-title,
+.editorial-title.compact,
+.introduction .editorial-title {
+  margin: 0 0 5mm;
+  text-align: center;
+}
+
+.editorial-title h1,
+.volume-index > header h1 {
+  margin: -1mm 0 0;
+  color: var(--color-heading);
+  font: 400 28pt/.96 var(--font-editorial-family), serif;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.introduction .editorial-prose,
+.author-page .editorial-prose {
+  padding: 0 5mm;
+}
+
+.guide .editorial-title { margin-bottom: 3mm; }
+
+.guide-content { padding: 0 2mm; }
+
+.guide-content > p:first-child {
+  max-width: 104mm;
+  margin: 0 auto 3mm;
+  font-size: 10pt;
+  line-height: 13pt;
+  text-align: center;
+}
+
+.guide-list,
+.volume-index ol {
+  position: relative;
+  display: grid;
+  background: none;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 7mm;
+}
+
+.guide-list li,
+.volume-index li,
+.volume-index li:last-child {
+  position: relative;
+  display: grid;
+  min-height: 17mm;
+  padding: 1.3mm 0;
+  border: 0;
+  grid-template-columns: 15mm minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: 2mm;
+  row-gap: .7mm;
+  align-content: center;
+}
+
+.guide-list li::before,
+.volume-index li > span {
+  z-index: 1;
+  display: block;
+  width: 13mm;
+  padding: 1mm 1mm 1mm 0;
+  background: none;
+  color: var(--color-heading);
+  font: 400 15pt/.92 var(--font-accent-family), cursive;
+  text-align: right;
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  align-self: center;
+}
+
+.guide-list strong,
+.volume-index li strong {
+  color: var(--color-heading);
+  font: 400 10.5pt/1.08 var(--font-editorial-family), serif;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.guide-list span,
+.volume-index li small {
+  margin: 0;
+  color: var(--color-ink-soft);
+  font: 400 7.2pt/1.22 var(--font-editorial-family), serif;
+  font-style: italic;
+  letter-spacing: 0;
+  text-transform: none;
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.guide-note {
+  margin-top: 2mm;
+  padding-top: 2mm;
+  border-top: var(--space-hairline) solid color-mix(in srgb, var(--color-line) 45%, transparent);
+  font-size: 8.6pt;
+  line-height: 11.5pt;
+  text-align: center;
+}
+
+.author-page .editorial-prose {
+  max-width: 108mm;
+  margin: 8mm auto 0;
+  font-size: 11.2pt;
+  line-height: 15.3pt;
+}
+
+.volume-index.front-matter-page {
+  padding: 5mm 7mm 6mm;
+}
+
+.volume-index > header {
+  max-width: 116mm;
+  margin: 0 auto 3mm;
+}
+
+.volume-index > header .section-kicker {
+  font-size: 34pt;
+}
+
+.volume-index > header > p:last-child {
+  margin-top: 2mm;
+}
+
+.volume-index > header::after {
+  margin-top: 2mm;
+}
+
+.volume-index ol {
+  width: 112mm;
+  margin: 0 auto;
+  column-gap: 8mm;
+}
+
+.volume-index li,
+.volume-index li:last-child {
+  min-height: 19mm;
+}
+
+.volume-index li strong {
+  font-size: 12pt;
+}
+
+.woman-opening {
+  --opening-field-color: var(--color-brand-volume-1);
+  page: opening;
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 58mm) minmax(0, 1fr);
+  gap: 10mm;
+  align-items: stretch;
+  width: var(--trim-width);
+  height: var(--trim-height);
+  padding: 17mm 16mm 16mm;
+  overflow: hidden;
+  background: var(--color-brand-volume-1);
+  color: var(--color-brand-cream);
+  break-before: page;
+  break-after: page;
+}
+
+@page atlas {
+  @top-left { content: none; }
+  @top-right { content: none; }
+}
+
+.opening-author {
+  display: block;
+  margin-bottom: auto;
+  color: color-mix(in srgb, var(--color-brand-cream) 78%, transparent);
+}
+
+.woman-opening-copy {
+  display: flex;
+  min-width: 0;
+  padding: 2mm 0 7mm;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: left;
+}
+
+.woman-opening-copy h1 {
+  margin: 0;
+  font-size: 35pt;
+  font-weight: 500;
+  line-height: 0.9;
+  hyphens: none;
+}
+
+.opening-script {
+  display: block;
+  margin: 8mm 0 -1mm;
+  color: color-mix(in srgb, var(--color-brand-sand) 90%, transparent);
+  font: 400 18pt/1 var(--font-accent-family), cursive;
+}
+
+.opening-theme {
+  margin: 5mm 0 0;
+  color: var(--color-brand-sand);
+  font: 500 13.5pt/1.12 var(--font-editorial-family), serif;
+}
+
+.woman-opening.volume-1 .opening-author { color: var(--color-brand-cream); }
+
+.woman-opening.volume-1 .opening-theme {
+  color: color-mix(in srgb, var(--color-brand-sand) 30%, var(--color-brand-cream));
+}
+
+.woman-opening-figure {
+  min-width: 0;
+  height: 197mm;
+  margin: 0;
+  overflow: hidden;
+  border: var(--stroke-image) solid color-mix(in srgb, var(--color-brand-sand) 66%, transparent);
+  background: color-mix(in srgb, var(--color-brand-volume-1) 86%, var(--color-paper));
+}
+
+.woman-opening.has-art { display: block; }
+
+.woman-opening.has-art .woman-opening-figure {
+  position: absolute;
+  inset: -3mm;
+  width: auto;
+  height: auto;
+  border: 0;
+}
+
+.woman-opening.has-art .woman-opening-copy {
+  position: absolute;
+  z-index: 1;
+  top: 17mm;
+  left: 0;
+  width: 92mm;
+  min-height: 66mm;
+  padding: 10mm 15mm 9mm 16mm;
+  border: 0;
+  isolation: isolate;
+  background: transparent;
+  text-shadow: none;
+}
+
+.woman-opening.has-art .woman-opening-copy > * { position: relative; z-index: 1; }
+
+/* O texto continua no DOM para leitura assistiva, mas a prévia pode usar o
+   lockup rasterizado com as fontes canônicas integrado à própria arte. */
+.woman-opening.has-integrated-wordmark .woman-opening-copy {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  min-height: 0;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.woman-opening.has-integrated-wordmark .woman-opening-copy::before,
+.woman-opening.has-integrated-wordmark .woman-opening-copy::after { content: none; }
+
+.woman-opening-figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.woman-opening.is-absence {
+  grid-template-columns: minmax(0, 58mm) minmax(0, 1fr);
+}
+
+.woman-opening.is-absence .woman-opening-copy {
+  padding-right: 8mm;
+}
+
+.woman-opening.is-absence .woman-opening-figure {
+  display: flex;
+  padding: 0 0 7mm;
+  align-items: flex-end;
+  border: 0;
+  background: transparent;
+}
+
+.woman-opening-absence {
+  max-width: 66mm;
+  margin: 0;
+  color: color-mix(in srgb, var(--color-brand-cream) 72%, transparent);
+  font: 600 6.7pt/1.45 var(--font-label-family), sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.component-heading span {
+  margin: 0;
+  color: var(--color-heading);
+  font: 500 15pt/1.1 var(--font-editorial-family), serif;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.woman-opening-absence span,
+.woman-opening-absence strong { display: block; }
+
+.woman-opening-absence strong {
+  margin: 2mm 0 4mm;
+  color: var(--color-brand-cream);
+  font: 500 18pt/1.02 var(--font-editorial-family), serif;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.woman-opening-absence p { margin: 0; }
+
+@page woman-closure {
+  margin: 0;
+  background: var(--color-paper);
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+  @bottom-center { content: none; }
+}
+
+.woman-closure {
+  page: woman-closure;
+  position: relative;
+  box-sizing: border-box;
+  width: var(--trim-width);
+  height: var(--trim-height);
+  padding: 17mm 16mm 16mm;
+  overflow: hidden;
+  color: var(--color-brand-cream);
+  background: var(--color-brand-volume-1);
+  break-before: page;
+  break-after: page;
+}
+
+.woman-closure.volume-2 { background: var(--color-brand-volume-2); }
+
+.woman-closure-figure {
+  width: 100%;
+  height: 197mm;
+  margin: 0;
+  overflow: hidden;
+  border: var(--stroke-image) solid color-mix(in srgb, var(--color-brand-sand) 66%, transparent);
+  background: var(--color-paper);
+}
+
+.woman-closure-figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@page woman-breathing {
+  margin: 0;
+  background: var(--color-paper);
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+  @bottom-center { content: none; }
+}
+
+.woman-breathing-page {
+  position: relative;
+  page: woman-breathing;
+  box-sizing: border-box;
+  display: flex;
+  width: var(--trim-width);
+  height: var(--trim-height);
+  padding: 28mm 24mm;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-paper);
+  break-before: page;
+  break-after: page;
+}
+
+.woman-breathing-summary {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+.woman-breathing-page--simple {
+  justify-content: center;
+}
+
+.woman-breathing-page .woman-breathing-kicker {
+  margin: 0 0 8mm;
+  color: var(--color-ink-soft);
+  font: 600 8.5pt/1 var(--font-sans-family), sans-serif;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.woman-breathing-page .woman-breathing-text {
+  max-width: 116mm;
+  margin: 0;
+  color: var(--color-heading);
+  font: 500 28pt/1.12 var(--font-editorial-family), serif;
+  letter-spacing: -.01em;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.woman-breathing-ornament {
+  width: 76mm;
+  max-height: 25mm;
+  margin-top: 13mm;
+  object-fit: contain;
+  opacity: .58;
+}
+
+.woman-breathing-expression {
+  width: 110mm;
+  min-height: 76mm;
+  margin-top: 12mm;
+  color: var(--color-ink-soft);
+  text-align: center;
+}
+
+.reader-expression-lockup {
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.woman-breathing-expression h2,
+.reader-expression-space h2 {
+  display: grid;
+  width: fit-content;
+  margin: 0;
+  color: var(--color-heading);
+  font: 400 25pt/1 var(--font-accent-family), cursive;
+  grid-template-columns: 16mm max-content;
+  column-gap: var(--space-xs);
+  align-items: center;
+  text-align: left;
+}
+
+.woman-breathing-expression h2::before,
+.reader-expression-space h2::before {
+  display: block;
+  width: 16mm;
+  height: 16mm;
+  background: url("../assets/ilustracoes/specimens/oficial/semana-01-sara/raster/sara-editorial-expression-flower-preserved-pack-review-v001.webp?v=488b7e8") center / contain no-repeat;
+  content: "";
+}
+
+.woman-breathing-expression p,
+.reader-expression-space p {
+  width: 100%;
+  margin: 2mm 0 0;
+  color: var(--color-ink-soft);
+  font: 500 7.5pt/1.2 var(--font-label-family), sans-serif;
+  letter-spacing: .08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.woman-breathing-hint {
+  margin: 0;
+  color: var(--color-ink-soft);
+  font: 500 11pt/1.2 var(--font-editorial-family), serif;
+  font-style: italic;
+}
+
+.woman-breathing-page[data-ink-mode="black_only"] {
+  color: var(--color-ink);
+}
+
+.woman-breathing-page[data-ink-mode="black_only"] .woman-breathing-text { color: var(--color-heading); }
+.woman-breathing-page[data-ink-mode="black_only"] .woman-breathing-hint { color: var(--color-ink-soft); }
+
+.reader-expression-space {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 24mm;
+  margin: 8mm auto 0;
+  padding-top: 3mm;
+  text-align: center;
+  break-inside: avoid-page;
+}
+
+/* Os preenchimentos editoriais são instalados somente depois que a paginação
+   comprova um vazio real. Por serem sobreposições de página, não alteram fluxo,
+   não criam folhas e nunca aparecem no sétimo dia. */
+.jsm-page-filler {
+  position: absolute !important;
+  z-index: 2;
+  display: block !important;
+  box-sizing: border-box;
+  margin: 0 !important;
+  pointer-events: none;
+}
+
+.jsm-page-filler--expression {
+  right: 31mm;
+  left: 31mm;
+  width: auto !important;
+  min-height: 0;
+  padding: 0;
+}
+
+.jsm-page-filler--specimen {
+  left: 50%;
+  padding: 0 !important;
+  transform: translateX(-50%);
+}
+
+.jsm-page-filler--specimen img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 auto;
+  object-fit: contain;
+  opacity: .84;
+  transform: none !important;
+}
+
+/* O convite usa somente o vazio que já acompanha a verdade. O agrupamento
+   impede que ele seja destacado sozinho para a página seguinte. */
+.truth-expression-group {
+  break-inside: avoid-page;
+  break-before: auto;
+}
+
+.woman-closure-quote {
+  position: absolute;
+  z-index: 2;
+  top: 19mm;
+  left: 50%;
+  width: min(118mm, calc(100% - 32mm));
+  margin: 0;
+  border: 0;
+  color: var(--color-brand-burgundy);
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.woman-closure-quote p {
+  margin: 0;
+  color: var(--color-brand-burgundy);
+  font: 500 italic 19.5pt/1.12 var(--font-editorial-family), serif;
+  letter-spacing: -.008em;
+  hyphens: none;
+  overflow-wrap: normal;
+  text-shadow: 0 .04mm 0 currentColor;
+  word-break: normal;
+  text-wrap: balance;
+}
+
+.woman-closure-keyword {
+  display: inline-block;
+  color: #642a34;
+  font: 400 36pt/.78 var(--font-accent-family), cursive;
+  font-style: normal;
+  letter-spacing: 0;
+  text-shadow: none;
+  vertical-align: -.06em;
+  white-space: nowrap;
+}
+
+/* Sara preserva a fumaça como coluna narrativa à esquerda; a síntese ocupa
+   somente o céu opalino livre à direita. */
+.woman-closure[data-week="1"] .woman-closure-quote {
+  top: 18mm;
+  right: 10mm;
+  left: auto;
+  width: 78mm;
+  text-align: center;
+  transform: none;
+}
+
+/* Dorcas preserva a copa florida como moldura orgânica à esquerda; a síntese
+   repousa no céu opalino aberto no alto à direita. */
+.woman-closure[data-week="2"] .woman-closure-quote {
+  top: 34mm;
+  right: 6mm;
+  left: auto;
+  width: 74mm;
+  text-align: center;
+  transform: none;
+}
+
+/* Marta usa a parede mineral interior como campo calmo da síntese. */
+.woman-closure[data-week="3"] .woman-closure-quote {
+  top: 20mm;
+  right: 10mm;
+  left: auto;
+  width: 88mm;
+  text-align: center;
+  transform: none;
+}
+
+/* A Viúva do azeite preserva a copa à esquerda; a síntese repousa no céu
+   opalino que a cena abre no alto à direita. */
+.woman-closure[data-week="4"] .woman-closure-quote {
+  top: 18mm;
+  right: 9mm;
+  left: auto;
+  width: 72mm;
+  text-align: center;
+  transform: none;
+}
+
+/* A Mulher hemorrágica concentra o vitral na meia parede inferior; a síntese
+   repousa no campo azul opalino liso que recorta a Leitora no alto. */
+.woman-closure[data-week="5"] .woman-closure-quote {
+  top: 20mm;
+  left: 10mm;
+  width: 82mm;
+  text-align: center;
+  transform: none;
+}
+
+.woman-closure[data-week="6"] .woman-closure-quote {
+  top: 19mm;
+  right: auto;
+  left: 11mm;
+  width: 82mm;
+  transform: none;
+}
+
+.woman-closure[data-week="7"] .woman-closure-quote,
+.woman-closure[data-week="9"] .woman-closure-quote,
+.woman-closure[data-week="11"] .woman-closure-quote {
+  top: 19mm;
+  left: 50%;
+  width: 108mm;
+  transform: translateX(-50%);
+}
+
+/* Mapa óptico dos encerramentos aprovados. A frase ocupa sempre o campo
+   luminoso livre da cena e nunca atravessa rosto, mãos, objeto ou vegetação. */
+.woman-closure[data-week="8"] .woman-closure-quote,
+.woman-closure[data-week="10"] .woman-closure-quote,
+.woman-closure[data-week="13"] .woman-closure-quote,
+.woman-closure[data-week="14"] .woman-closure-quote,
+.woman-closure[data-week="15"] .woman-closure-quote,
+.woman-closure[data-week="18"] .woman-closure-quote {
+  top: 18mm;
+  right: auto;
+  left: 10mm;
+  width: 86mm;
+  text-align: center;
+  transform: none;
+}
+
+.woman-closure[data-week="12"] .woman-closure-quote,
+.woman-closure[data-week="16"] .woman-closure-quote,
+.woman-closure[data-week="17"] .woman-closure-quote,
+.woman-closure[data-week="19"] .woman-closure-quote,
+.woman-closure[data-week="20"] .woman-closure-quote {
+  top: 18mm;
+  right: 10mm;
+  left: auto;
+  width: 88mm;
+  text-align: center;
+  transform: none;
+}
+
+/* Em Priscila, a amarração da tenda ocupa o eixo; a frase repousa por inteiro
+   no tecido marfim à direita, sem cruzar a faixa teal. */
+.woman-closure[data-week="20"] .woman-closure-quote {
+  top: 21mm;
+  right: 6mm;
+  width: 72mm;
+}
+
+.week-map {
+  box-sizing: border-box;
+  min-height: 184mm;
+  padding: 5mm 0 0;
+  break-after: page;
+}
+
+.week-map header {
+  margin-bottom: 5mm;
+  padding-bottom: 6mm;
+  border-bottom: var(--space-hairline) solid color-mix(in srgb, var(--color-line) 48%, transparent);
+}
+
+.week-map h1 {
+  margin: 2mm 0 2mm;
+  color: var(--color-heading);
+  font-size: 25pt;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.week-map header > p:last-child {
+  max-width: 94mm;
+  color: var(--color-ink-soft);
+  font-style: italic;
+}
+
+.week-map-list {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.week-map-list::before { content: none; }
+
+.week-map-list li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 8.5mm 1fr;
+  gap: 3.5mm;
+  align-items: start;
+  padding: 1.1mm 0;
+  border-bottom: 0;
+}
+
+.week-map-list > li > span {
+  z-index: 1;
+  display: grid;
+  width: 8.5mm;
+  min-height: 5.5mm;
+  height: auto;
+  padding: 1mm 0;
+  place-items: center;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--color-heading);
+  font: 500 7.5pt/1 var(--font-label-family), sans-serif;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.week-map-list strong {
+  display: block;
+  font-size: 10.5pt;
+  font-weight: 600;
+  line-height: 12pt;
+}
+
+/* Control alternatives for the two journeys still awaiting the timeline
+   decision. Sara is fully specified in the scoped block below. */
+.week-map[data-week="5"] .week-map-list,
+.week-map[data-week="11"] .week-map-list {
+  padding: 2mm 0 1mm;
+}
+
+.week-map[data-week="5"] .week-map-list::before,
+.week-map[data-week="11"] .week-map-list::before {
+  position: absolute;
+  top: 3mm;
+  bottom: 3mm;
+  left: 3.8mm;
+  width: 0.35mm;
+  background: var(--color-line);
+  content: "";
+}
+
+.week-map[data-week="5"] .week-map-list li,
+.week-map[data-week="11"] .week-map-list li {
+  grid-template-columns: 8.5mm 1fr;
+  min-height: 12mm;
+  padding: 1mm 0;
+}
+
+.week-map[data-week="5"] .week-map-list > li > span,
+.week-map[data-week="11"] .week-map-list > li > span {
+  position: relative;
+  width: 7.8mm;
+  min-height: 7.8mm;
+  padding: 0;
+  border: 0.45mm solid var(--color-line);
+  background: var(--color-page-background);
+}
+
+/* Mulher hemorrágica: an interrupted stitch. Short crossbars make the
+   rupture visible without literal blood imagery. */
+.week-map[data-week="5"] .week-map-list::before {
+  left: 3.9mm;
+  width: 0.45mm;
+  background: repeating-linear-gradient(to bottom, var(--color-line) 0 7mm, transparent 7mm 9mm, var(--color-line) 9mm 11mm, transparent 11mm 14mm);
+}
+
+.week-map[data-week="5"] .week-map-list li:nth-child(1) > span,
+.week-map[data-week="5"] .week-map-list li:nth-child(2) > span,
+.week-map[data-week="5"] .week-map-list li:nth-child(3) > span {
+  border-style: dashed;
+  transform: rotate(-2deg);
+}
+
+.week-map[data-week="5"] .week-map-list li:nth-child(4) > span {
+  border-width: 0.7mm 0.35mm;
+  transform: translateX(1mm);
+}
+
+.week-map[data-week="5"] .week-map-list li:nth-child(5) > span,
+.week-map[data-week="5"] .week-map-list li:nth-child(6) > span,
+.week-map[data-week="5"] .week-map-list li:nth-child(7) > span {
+  border-style: double;
+}
+
+.week-map[data-week="5"] .week-map-list li:nth-child(5) > span { transform: rotate(1deg); }
+.week-map[data-week="5"] .week-map-list li:nth-child(6) > span { transform: translateX(-0.5mm) rotate(-1deg); }
+.week-map[data-week="5"] .week-map-list li:nth-child(7) > span { transform: translateX(0.5mm); }
+
+/* Maria de Betânia: one contained gesture widening into the room. The
+   growing inset and border weight carry the expansion; no emblem is added. */
+.week-map[data-week="11"] .week-map-list::before {
+  left: 3.9mm;
+  width: 0.5mm;
+  background: linear-gradient(to bottom, var(--color-line), color-mix(in srgb, var(--color-line) 42%, transparent));
+}
+
+.week-map[data-week="11"] .week-map-list li:nth-child(1) { padding-left: 0; }
+.week-map[data-week="11"] .week-map-list li:nth-child(2) { padding-left: 1mm; }
+.week-map[data-week="11"] .week-map-list li:nth-child(3) { padding-left: 2mm; }
+.week-map[data-week="11"] .week-map-list li:nth-child(4) { padding-left: 3mm; }
+.week-map[data-week="11"] .week-map-list li:nth-child(5) { padding-left: 4mm; }
+.week-map[data-week="11"] .week-map-list li:nth-child(6) { padding-left: 5mm; }
+.week-map[data-week="11"] .week-map-list li:nth-child(7) { padding-left: 6mm; }
+
+.week-map[data-week="11"] .week-map-list li:nth-child(1) > span {
+  width: 5.5mm;
+  min-height: 5.5mm;
+  border-width: 0.8mm;
+}
+
+.week-map[data-week="11"] .week-map-list li:nth-child(2) > span,
+.week-map[data-week="11"] .week-map-list li:nth-child(3) > span { border-width: 0.65mm; }
+
+.week-map[data-week="11"] .week-map-list li:nth-child(4) > span,
+.week-map[data-week="11"] .week-map-list li:nth-child(5) > span { border-width: 0.55mm; }
+
+.week-map[data-week="11"] .week-map-list li:nth-child(6) > span,
+.week-map[data-week="11"] .week-map-list li:nth-child(7) > span { border-width: 0.4mm; }
+
+@media (max-width: 680px) {
+  .week-map[data-week="5"] .week-map-list li,
+  .week-map[data-week="11"] .week-map-list li {
+    min-height: 10mm;
+  }
+}
+
+.devotional-day {
+  break-before: page;
+  text-align: justify;
+}
+
+.day-header {
+  position: relative;
+  min-height: 44mm;
+  margin: var(--space-md) 0 var(--space-lg);
+  padding: 0 27mm 8mm 0;
+  border-bottom: var(--space-hairline) solid color-mix(in srgb, var(--color-line) 48%, transparent);
+  text-align: left;
+}
+
+.day-header::after { content: none; }
+
+.day-sequence {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25mm;
+  color: var(--color-heading);
+  text-align: right;
+}
+
+.day-sequence span {
+  display: block;
+  font: 400 24pt/.88 var(--font-accent-family), cursive;
+}
+
+.day-sequence strong {
+  display: block;
+  color: var(--color-heading);
+  font: 400 24pt/.88 var(--font-accent-family), cursive;
+}
+
+.day-sequence small {
+  display: block;
+  margin-top: 1mm;
+  font: 600 6.5pt/1 var(--font-label-family), sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.day-header h1 {
+  max-width: 98mm;
+  margin: 7mm 0 2mm;
+  color: var(--color-heading);
+  font-size: 26pt;
+  font-weight: 500;
+  line-height: 0.98;
+}
+
+.day-theme {
+  margin: 0;
+  color: var(--color-ink-soft);
+  font: 600 7pt/1.3 var(--font-label-family), sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.day-component {
+  max-width: 116mm;
+  margin: var(--space-lg) 0;
+}
+
+.component-opening h2,
+.component-reading h2 {
+  margin: 0 0 var(--space-sm);
+  color: var(--color-heading);
+  font-size: 16pt;
+  font-weight: 500;
+  line-height: 1.05;
+  break-after: avoid;
+}
+
+.component-opening > p:first-of-type { color: var(--color-ink-soft); }
+
+blockquote {
+  max-width: 106mm;
+  margin: var(--space-md) 0 var(--space-lg) var(--space-md);
+  padding: var(--space-xs) 0 var(--space-xs) var(--space-md);
+  border-left: 0.85mm double var(--color-line);
+  color: var(--color-ink-soft);
+  font-style: italic;
+}
+
+.component-heading {
+  margin-bottom: var(--space-sm);
+  color: var(--color-heading);
+  text-align: left;
+  break-inside: avoid-page;
+  break-after: avoid-page;
+}
+
+.component-heading span,
+.component-heading strong { display: block; }
+
+.component-heading strong {
+  margin-top: 1.3mm;
+  font-size: 14pt;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.1;
+}
+
+.component-deeper-note {
+  padding-left: 6mm;
+  border-left: 0.75mm double color-mix(in srgb, var(--color-line) 72%, transparent);
+}
+
+.component-silence {
+  position: relative;
+  max-width: 104mm;
+  min-height: 42mm;
+  margin: var(--space-xl) 0;
+  padding: var(--space-lg) var(--space-lg) var(--space-md) 0;
+  border-left: 0;
+  background: transparent;
+  text-align: left;
+  break-inside: avoid;
+}
+
+.component-silence::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20mm;
+  border-top: 0.65mm double color-mix(in srgb, var(--color-line) 70%, transparent);
+  content: "";
+}
+
+.component-silence p { margin-bottom: 0.45em; }
+
+.component-reflection {
+  margin-top: var(--space-xl);
+  text-align: left;
+}
+
+.reflection-prompt {
+  margin-bottom: var(--space-lg);
+  break-inside: avoid;
+}
+
+.reflection-prompt.writing-space-compact { margin-bottom: var(--space-md); }
+
+.reflection-prompt.writing-space-deep { margin-bottom: var(--space-xl); }
+
+.component-reflection .reflection-prompt > p {
+  margin: 0;
+  color: var(--color-ink);
+  font-style: italic;
+}
+
+.writing-lines {
+  width: 100%;
+  margin: var(--space-xs) 0 0;
+  break-inside: avoid;
+}
+
+.writing-space-deep .writing-lines { margin-top: var(--space-sm); }
+
+.writing-lines span {
+  display: block;
+  height: 7mm;
+  border-bottom: var(--space-hairline) solid color-mix(in srgb, var(--color-ink-soft) 38%, transparent);
+}
+
+.component-christ { margin-top: var(--space-lg); }
+
+.component-prayer {
+  padding: var(--space-xs) 0 var(--space-xs) var(--space-md);
+  border-left: 1.1mm double var(--color-prayer-mark);
+  font-style: italic;
+  text-align: left;
+  break-inside: avoid;
+}
+
+.component-prayer .component-heading { font-style: normal; }
+
+.component-keepsake {
+  margin-top: var(--space-lg);
+  text-align: left;
+  break-inside: avoid;
+}
+
+.component-truth {
+  position: relative;
+  margin-top: var(--space-lg);
+  padding: var(--space-lg) 0 var(--space-md);
+  border: 0;
+  border-top: 0.65mm double color-mix(in srgb, var(--color-line) 70%, transparent);
+  background: transparent;
+  font-style: italic;
+  text-align: left;
+  break-inside: avoid;
+}
+
+.component-truth::after { content: none; }
+
+.devotional-day[data-day="7"] .component-keepsake {
+  min-height: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+
+.component-keepsake.writing-space-compact { margin-top: var(--space-lg); }
+
+.component-keepsake.writing-space-deep { margin-top: var(--space-xl); }
+
+.devotional-day[data-day="7"] .component-truth {
+  width: auto;
+  height: auto;
+  margin: var(--space-xl) 0 0;
+  padding: var(--space-xl) 0 var(--space-md);
+  border-top: 0;
+  color: var(--color-ink);
+  background-color: transparent;
+  background-image: none;
+  break-before: auto;
+  break-inside: avoid;
+}
+
+.devotional-day[data-day="7"] .component-truth::after { content: none; }
+
+.devotional-day[data-day="7"] .component-truth .component-heading strong {
+  color: var(--color-heading);
+  font: 400 18pt/1.05 var(--font-accent-family), cursive;
+  letter-spacing: 0;
+}
+
+.devotional-day[data-day="7"] .component-truth .component-heading,
+.devotional-day[data-day="7"] .component-truth .component-heading strong {
+  color: var(--color-heading);
+}
+
+.devotional-day[data-day="7"] .component-truth .component-heading span,
+.devotional-day[data-day="7"] .component-song .component-heading span {
+  color: var(--color-heading);
+}
+
+.devotional-day.volume-1[data-day="7"] .component-truth .component-heading span,
+.devotional-day.volume-1[data-day="7"] .component-song .component-heading span {
+  color: var(--color-heading);
+}
+
+.devotional-day[data-day="7"] .component-song {
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 5mm 0 10mm;
+  color: var(--color-ink-soft);
+  background-color: transparent;
+  break-before: avoid-page;
+}
+
+.devotional-day.volume-1[data-day="7"] .component-song {
+  color: var(--color-ink-soft);
+}
+
+.devotional-day[data-day="7"] .component-song::before { content: none; }
+
+.devotional-day[data-day="7"] .component-song .component-heading,
+.devotional-day[data-day="7"] .component-song .component-heading strong {
+  color: var(--color-heading);
+}
+
+.component-truth .component-heading { font-style: normal; }
+
+.component-song {
+  position: relative;
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: var(--space-hairline) solid color-mix(in srgb, var(--color-line) 48%, transparent);
+  color: var(--color-ink-soft);
+  font-size: 9.5pt;
+  text-align: left;
+  break-inside: avoid;
+}
+
+.component-song::before { content: none; }
+
+/* Gramática editorial oficial do miolo. */
+.live-book .component-opening > blockquote {
+  max-width: 108mm;
+  margin: 7mm 0 9mm;
+  padding: 2.5mm 0 2.5mm 6mm;
+  border-left-width: 1mm;
+  color: var(--color-ink);
+  font-size: 10pt;
+  line-height: 14pt;
+  text-align: left;
+  break-inside: avoid;
+}
+
+.live-book .editorial-pull-quote {
+  position: relative;
+  max-width: 100mm;
+  margin: var(--space-lg) 0 var(--space-xl) var(--space-lg);
+  padding: var(--space-lg) 0 var(--space-xs);
+  color: var(--color-heading);
+  font-size: 15.5pt;
+  font-weight: 500;
+  line-height: 1.16;
+  letter-spacing: -0.01em;
+  text-align: left;
+  break-inside: avoid;
+}
+
+.live-book .editorial-pull-quote::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20mm;
+  border-top: 0.7mm double color-mix(in srgb, var(--color-line) 74%, transparent);
+  content: "";
+}
+
+.live-book .editorial-pull-quote em {
+  font-style: normal;
+}
+
+.live-book .component-deeper-note {
+  max-width: 108mm;
+  margin-left: var(--space-md);
+  padding: var(--space-lg) var(--space-lg) var(--space-md);
+  border-left: 0;
+  background: color-mix(in srgb, var(--color-meditative-surface) 38%, var(--color-paper));
+  text-align: left;
+  break-inside: avoid-page;
+}
+
+.live-book .component-deeper-note .component-heading {
+  margin-bottom: 4mm;
+}
+
+.live-book .component-silence {
+  min-height: 48mm;
+  margin-block: 16mm;
+}
+
+.live-book .component-reflection .reflection-prompt > p {
+  max-width: 104mm;
+  color: var(--color-ink);
+  font-size: 12pt;
+  font-style: normal;
+  line-height: 1.28;
+}
+
+.live-book .component-prayer {
+  max-width: 104mm;
+  margin-left: 6mm;
+  padding: 5mm 0 5mm 7mm;
+  border-left-width: 1mm;
+}
+
+.live-book .component-keepsake .component-heading {
+  margin-bottom: 4mm;
+}
+
+.live-book .component-song {
+  break-before: avoid-page;
+}
+
+/* Matriz editorial de Sara — Limiar → Caminho → Resposta. O escopo da
+   semana 1 permite aprovar o sistema antes de propagá-lo às outras jornadas. */
+.woman-opening.volume-1 { page: opening-volume-1; }
+.woman-opening.volume-2 {
+  --opening-field-color: var(--color-brand-volume-2);
+  page: opening-volume-2;
+  background: var(--color-brand-volume-2);
+}
+
+@page opening-volume-1 {
+  margin: 0;
+  background: var(--color-brand-volume-1);
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+
+@page opening-volume-2 {
+  margin: 0;
+  background: var(--color-brand-volume-2);
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+
+.woman-opening.has-art .opening-script {
+  margin: 0 0 -2.5mm;
+  font-size: 24pt;
+}
+
+.woman-opening.has-art .woman-opening-copy h1 {
+  font-size: 36pt;
+  line-height: .88;
+}
+
+.woman-opening.has-art .opening-theme {
+  margin-top: 4mm;
+  font: 600 7pt/1.25 var(--font-label-family), sans-serif;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.week-map { page: atlas; }
+
+.week-map[data-week="1"] .week-map-script {
+  display: block;
+  color: var(--color-heading);
+  font: 400 25pt/.9 var(--font-accent-family), cursive;
+}
+
+.week-map[data-week="1"] {
+  position: relative;
+  min-height: 184mm;
+  padding-top: 7mm;
+  overflow: hidden;
+}
+
+.week-map[data-week="1"] header {
+  position: relative;
+  z-index: 2;
+  width: 92mm;
+  margin: 0 0 9mm;
+  padding: 0;
+  border: 0;
+}
+
+.week-map[data-week="1"] h1 {
+  margin: 1mm 0 0;
+  font-size: 28pt;
+  line-height: .94;
+}
+
+.week-map[data-week="1"] .week-map-list {
+  z-index: 3;
+  z-index: 2;
+  width: 96mm;
+  margin-left: 4mm;
+  padding: 0 0 2mm;
+}
+
+.week-map[data-week="1"] .week-map-list::before { content: none; }
+
+.week-map[data-week="1"] .week-map-list li {
+  grid-template-columns: 11mm minmax(0, 1fr);
+  gap: 4mm;
+  min-height: 16mm;
+  padding: 2mm 0;
+}
+
+.week-map[data-week="1"] .week-map-list li:nth-child(even) { margin-left: 10mm; }
+.week-map[data-week="1"] .week-map-list li:nth-child(3n) { margin-left: 4mm; }
+
+.week-map[data-week="1"] .week-map-list > li > span {
+  width: 11mm;
+  min-height: 8mm;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: var(--color-heading);
+  background: transparent;
+  font: 500 16pt/.9 var(--font-editorial-family), serif;
+  letter-spacing: -.02em;
+  transform: none;
+}
+
+.week-map[data-week="1"] .week-map-list strong {
+  font-size: 11.5pt;
+  font-weight: 500;
+  line-height: 12.5pt;
+}
+
+.devotional-day[data-week="1"] {
+  text-align: left;
+}
+
+.devotional-day[data-week="1"] .day-header {
+  min-height: 48mm;
+  margin: 5mm 0 11mm;
+  padding: 0 28mm 10mm 0;
+  border: 0;
+}
+
+.devotional-day[data-week="1"] .day-header::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  height: 9mm;
+  background: var(--week-divider-image, none) left center / 76mm auto no-repeat;
+  content: "";
+}
+
+.running-woman {
+  position: static;
+  display: block;
+  width: 0;
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  white-space: nowrap;
+}
+
+.running-woman { string-set: running-woman content(text); }
+
+.devotional-day[data-week="1"] .day-sequence {
+  width: 26mm;
+  text-align: center;
+}
+
+.devotional-day[data-week="1"] .day-sequence span {
+  font: 400 16pt/.8 var(--font-accent-family), cursive;
+}
+
+.devotional-day[data-week="1"] .day-sequence strong {
+  display: block;
+  margin-top: 1mm;
+  font: 500 28pt/.78 var(--font-editorial-family), serif;
+}
+
+.devotional-day[data-week="1"] .day-sequence small { margin-top: 2mm; }
+
+.devotional-day[data-week="1"] .day-header h1 {
+  margin-top: 6mm;
+  font-size: 28pt;
+  line-height: .94;
+}
+
+.devotional-day[data-week="1"] .day-theme { max-width: 90mm; }
+
+.devotional-day[data-week="1"] .day-narrative-specimen {
+  break-inside: avoid;
+  pointer-events: none;
+}
+
+.devotional-day[data-week="1"] .day-narrative-specimen img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.devotional-day[data-week="1"] .placement-after_scripture {
+  width: 34mm;
+  height: 29mm;
+  margin: -3mm 0 6mm auto;
+}
+
+.devotional-day[data-week="1"] .placement-before_reflection {
+  width: 39mm;
+  height: 28mm;
+  margin: 12mm 0 -4mm auto;
+}
+
+.devotional-day[data-week="1"] .placement-silence_outer_margin {
+  width: 43mm;
+  height: 30mm;
+  margin: -19mm -5mm 10mm auto;
+}
+
+.devotional-day[data-week="1"] .scripture-quotation,
+.devotional-day[data-week="1"] .component-prayer,
+.devotional-day[data-week="1"] .component-deeper-note {
+  position: relative;
+  border: 0;
+}
+
+.devotional-day[data-week="1"] .scripture-quotation::before,
+.devotional-day[data-week="1"] .component-prayer::before,
+.devotional-day[data-week="1"] .component-deeper-note::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 5mm;
+  background: var(--week-rail-image, none) center / 100% 100% no-repeat;
+  content: "";
+}
+
+.devotional-day[data-week="1"] .scripture-quotation::after {
+  position: absolute;
+  top: -6mm;
+  left: -1mm;
+  width: 11mm;
+  height: 11mm;
+  background: var(--week-scripture-image, none) center / contain no-repeat;
+  content: "";
+}
+
+.devotional-day[data-week="1"] .component-prayer::after {
+  position: absolute;
+  top: 1mm;
+  right: 0;
+  width: 13mm;
+  height: 13mm;
+  background: var(--week-prayer-image, none) center / contain no-repeat;
+  content: "";
+}
+
+.devotional-day[data-week="1"] .scripture-quotation {
+  max-width: 108mm;
+  margin: 8mm 0 10mm 3mm;
+  padding: 3mm 0 3mm 9mm;
+  color: var(--color-heading);
+  font-size: 12.5pt;
+  font-weight: 500;
+  line-height: 16pt;
+  text-align: left;
+}
+
+.devotional-day[data-week="1"] .component-deeper-note {
+  max-width: 108mm;
+  margin-left: 4mm;
+  padding: 5mm 0 4mm 10mm;
+  background: transparent;
+}
+
+.devotional-day[data-week="1"] .component-prayer {
+  max-width: 106mm;
+  margin-left: 4mm;
+  padding: 5mm 0 5mm 10mm;
+  font-style: italic;
+}
+
+.devotional-day[data-week="1"] .component-heading span {
+  text-transform: none;
+}
+
+.devotional-day[data-week="1"] .component-opening .component-heading span,
+.devotional-day[data-week="1"] .component-silence .component-heading span,
+.devotional-day[data-week="1"] .component-prayer .component-heading span,
+.devotional-day[data-week="1"] .component-truth .component-heading span,
+.devotional-day[data-week="1"] .component-song .component-heading span {
+  color: var(--color-heading);
+  font: 400 18pt/.95 var(--font-accent-family), cursive;
+  letter-spacing: 0;
+}
+
+.devotional-day[data-week="1"] .component-heading strong {
+  margin-top: var(--space-xs);
+  font-size: 15pt;
+  line-height: 1.05;
+}
+
+.devotional-day[data-week="1"] .component-silence {
+  min-height: 52mm;
+  margin: var(--space-xl) 0;
+  padding: var(--space-lg) var(--space-xl) var(--space-md) 0;
+}
+
+.devotional-day[data-week="1"] .component-silence::before { content: none; }
+
+.devotional-day[data-week="1"] .component-reflection {
+  counter-reset: reflection-question;
+}
+
+.devotional-day[data-week="1"] .reflection-prompt {
+  position: relative;
+  display: grid;
+  grid-template-columns: 9mm minmax(0, 1fr);
+  column-gap: var(--space-md);
+  counter-increment: reflection-question;
+}
+
+.devotional-day[data-week="1"] .reflection-prompt::before {
+  color: var(--color-heading);
+  content: counter(reflection-question, decimal-leading-zero);
+  font: 500 14pt/1 var(--font-editorial-family), serif;
+}
+
+.devotional-day[data-week="1"] .reflection-prompt > p,
+.devotional-day[data-week="1"] .reflection-prompt > .writing-lines { grid-column: 2; }
+
+.devotional-day[data-week="1"] .reflection-prompt > p {
+  font-size: 12pt;
+  font-style: normal;
+  line-height: 1.3;
+}
+
+.devotional-day[data-week="1"] .component-christ {
+  position: relative;
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+}
+
+.devotional-day[data-week="1"] .component-christ::before,
+.devotional-day[data-week="1"] .component-song::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 58mm;
+  height: 7mm;
+  border: 0;
+  background: var(--week-divider-image, none) left center / contain no-repeat;
+  content: "";
+}
+
+.devotional-day[data-week="1"] .component-truth {
+  margin-top: var(--space-xl);
+  padding: var(--space-lg) 0;
+  border: 0;
+  color: var(--color-ink);
+  background: transparent;
+  font-size: 17pt;
+  font-style: normal;
+  line-height: 1.12;
+}
+
+.devotional-day[data-week="1"] .component-truth::before,
+.devotional-day[data-week="1"] .component-truth::after {
+  display: block;
+  width: 72mm;
+  height: 7mm;
+  background: var(--week-divider-image, none) left center / contain no-repeat;
+  content: "";
+}
+
+.devotional-day[data-week="1"] .component-truth::before { margin-bottom: var(--space-lg); }
+.devotional-day[data-week="1"] .component-truth::after { margin-top: var(--space-lg); transform: rotate(180deg); }
+
+.devotional-day[data-week="1"] .component-song {
+  margin-top: var(--space-xs);
+  padding-top: var(--space-lg);
+  border: 0;
+  color: var(--color-ink-soft);
+  background: transparent;
+  font-size: 10pt;
+}
+
+.devotional-day[data-week="1"][data-day="7"] .component-truth,
+.devotional-day[data-week="1"][data-day="7"] .component-song {
+  width: auto;
+  height: auto;
+  color: var(--color-ink);
+  background: transparent;
+}
+
+.devotional-day[data-week="1"][data-day="7"] .component-truth {
+  margin-top: var(--space-xxl);
+  padding: var(--space-xl) 0 var(--space-lg);
+}
+
+.devotional-day[data-week="1"][data-day="7"] .component-song {
+  margin: 0;
+  padding: var(--space-lg) 0 var(--space-md);
+}
+
+.devotional-day[data-week="1"][data-day="7"] .component-truth .component-heading,
+.devotional-day[data-week="1"][data-day="7"] .component-truth .component-heading span,
+.devotional-day[data-week="1"][data-day="7"] .component-truth .component-heading strong,
+.devotional-day[data-week="1"][data-day="7"] .component-song .component-heading,
+.devotional-day[data-week="1"][data-day="7"] .component-song .component-heading span,
+.devotional-day[data-week="1"][data-day="7"] .component-song .component-heading strong {
+  color: var(--color-heading);
+}
+
+.woman-closure {
+  padding: 0;
+}
+
+.woman-closure .woman-closure-figure {
+  position: absolute;
+  inset: -3mm;
+  width: auto;
+  height: auto;
+  border: 0;
+}
+
+.woman-opening.has-art,
+.woman-closure {
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.woman-opening.has-art .woman-opening-figure,
+.woman-closure .woman-closure-figure {
+  margin: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.woman-opening.has-art .woman-opening-figure img,
+.woman-closure .woman-closure-figure img {
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  box-shadow: none;
+}
+
+/* Caminho de amendoeira — gramática editorial oficial de Sara.
+   A ornamentação nasce da mesma matriz de came da arte; linhas CSS ficam
+   reservadas exclusivamente para escrita e controles de produção. */
+@page colophon { @bottom-center { content: none; } }
+@page atlas {
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-center { content: none; }
+}
+@page opening-volume-1 { @bottom-center { content: none; } }
+@page opening-volume-2 { @bottom-center { content: none; } }
+@page woman-closure { @bottom-center { content: none; } }
+@page sara-day:left {
+  @top-left {
+    width: calc(var(--space-xxl) * 2 + var(--space-xl));
+    padding-bottom: var(--space-xs);
+    color: var(--color-ink-soft);
+    content: string(running-woman, first);
+    font: 500 6.8pt/1 var(--font-label-family), sans-serif;
+    letter-spacing: .08em;
+    text-align: left;
+    text-transform: uppercase;
+  }
+  @top-right {
+    width: calc(var(--space-xxl) * 2 + var(--space-xl));
+    padding-bottom: var(--space-xs);
+    color: var(--color-ink-soft);
+    content: none;
+    font: 500 6.8pt/1 var(--font-label-family), sans-serif;
+    letter-spacing: .06em;
+    text-align: right;
+    text-transform: uppercase;
+  }
+  @bottom-left {
+    width: 58mm;
+    padding-top: 1.5mm;
+    color: var(--color-ink-soft);
+    content: none;
+    font: 500 6.4pt/1 var(--font-label-family), sans-serif;
+    letter-spacing: .045em;
+    text-align: left;
+    text-transform: uppercase;
+  }
+  @bottom-center {
+    width: auto;
+    height: auto;
+    padding: 0;
+    background: none;
+    color: var(--color-ink-soft);
+    content: counter(page);
+    font: 400 9pt/1 var(--font-editorial-family), serif;
+  }
+}
+@page sara-day:right {
+  @top-left {
+    width: 48mm;
+    padding-bottom: 1.5mm;
+    color: var(--color-ink-soft);
+    content: string(running-woman, first);
+    font: 500 6.8pt/1 var(--font-label-family), sans-serif;
+    letter-spacing: .08em;
+    text-align: left;
+    text-transform: uppercase;
+  }
+  @top-right {
+    width: 48mm;
+    padding-bottom: 1.5mm;
+    color: var(--color-ink-soft);
+    content: none;
+    font: 500 6.8pt/1 var(--font-label-family), sans-serif;
+    letter-spacing: .06em;
+    text-align: right;
+    text-transform: uppercase;
+  }
+  @bottom-right {
+    width: 58mm;
+    padding-top: 1.5mm;
+    color: var(--color-ink-soft);
+    content: none;
+    font: 500 6.4pt/1 var(--font-label-family), sans-serif;
+    letter-spacing: .045em;
+    text-align: right;
+    text-transform: uppercase;
+  }
+  @bottom-center {
+    width: auto;
+    height: auto;
+    padding: 0;
+    background: none;
+    color: var(--color-ink-soft);
+    content: counter(page);
+    font: 400 9pt/1 var(--font-editorial-family), serif;
+  }
+}
+
+.woman-opening.has-art[data-week="1"] .woman-opening-copy {
+  top: 19mm;
+  left: 50%;
+  width: 124mm;
+  min-height: 0;
+  padding: 0;
+  color: var(--color-brand-volume-1);
+  isolation: isolate;
+  text-align: center;
+  text-shadow: none;
+  transform: translateX(-50%);
+}
+
+.woman-opening.has-art[data-week="1"] .woman-opening-copy::before { content: none; }
+
+.woman-opening.has-art[data-week="1"] .woman-opening-copy::after { content: none; }
+
+.woman-opening.has-art[data-week="1"] .opening-script {
+  width: 72%;
+  margin: 0 auto -2.5mm;
+  color: #825a3c;
+  font-size: 48pt;
+  line-height: .94;
+  white-space: nowrap;
+}
+
+.woman-opening.has-art[data-week="1"] .woman-opening-copy h1 {
+  color: var(--color-brand-burgundy);
+  font-size: 66pt;
+  font-weight: 500;
+  line-height: .84;
+  letter-spacing: -.03em;
+  text-rendering: geometricPrecision;
+  text-shadow: none;
+}
+
+.woman-opening.has-art[data-week="1"][data-name-length="short"] .woman-opening-copy h1 { font-size: 88pt; }
+.woman-opening.has-art[data-week="1"][data-name-length="long"] .woman-opening-copy h1 { font-size: 44pt; }
+
+.woman-opening.has-art[data-week="1"] .opening-theme {
+  max-width: 76mm;
+  margin: 2.6mm auto 0;
+  color: #825a3c;
+  font: 400 9.2pt/1.2 var(--font-label-family), sans-serif;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.week-map[data-week="1"] .week-map-script {
+  font-size: 48pt;
+  line-height: .9;
+}
+
+.week-map[data-week="1"] {
+  position: relative;
+  display: flex;
+  width: auto;
+  min-height: 184mm;
+  height: 184mm;
+  padding: 5mm 0 0;
+  flex-direction: column;
+  overflow: visible;
+}
+
+.week-map[data-week="1"] header {
+  position: relative;
+  display: grid;
+  width: 100%;
+  margin-bottom: 5mm;
+  padding-bottom: 0;
+  border: 0;
+  grid-template-columns: auto 7.5mm;
+  column-gap: 1.8mm;
+  align-items: end;
+  justify-content: center;
+  text-align: center;
+}
+
+.week-map[data-week="1"] header::after {
+  content: none;
+}
+
+.week-map[data-week="1"] .week-map-emblem {
+  display: block;
+  width: 7.5mm;
+  height: 7.5mm;
+  margin: 0 0 1.8mm -6mm;
+  background: var(--week-emblem-image, none) center / contain no-repeat;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.week-map[data-week="1"] h1 {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  margin: 0;
+  font-size: 36pt;
+  font-weight: 400;
+  line-height: .92;
+}
+
+.week-map[data-week="1"] .week-map-list {
+  position: relative;
+  display: grid;
+  width: 122mm;
+  margin: 0 auto;
+  min-height: 0;
+  flex: 1;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(7, minmax(0, 1fr));
+  gap: 0;
+}
+
+.week-map[data-week="1"] .week-map-list::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 16mm;
+  width: 13mm;
+  background: var(--week-timeline-spine-image, none) center / 13mm 100% no-repeat;
+  content: "";
+}
+
+.week-map[data-week="1"] .week-map-list li,
+.week-map[data-week="1"] .week-map-list li:nth-child(even),
+.week-map[data-week="1"] .week-map-list li:nth-child(3n) {
+  position: relative;
+  display: grid;
+  min-height: 0;
+  margin: 0;
+  padding: 1.8mm 0;
+  grid-template-columns: 25mm minmax(0, 1fr);
+  align-items: center;
+}
+
+.week-map[data-week="1"] .week-map-list li::after { content: none; }
+
+.week-map[data-week="1"] .week-map-list > li > span {
+  z-index: 2;
+  display: block;
+  width: 16mm;
+  min-height: 0;
+  padding: 1mm 1.5mm 1mm 0;
+  border: 0;
+  background: var(--color-paper);
+  color: var(--color-heading);
+  font: 400 15pt/.92 var(--font-accent-family), cursive;
+  letter-spacing: 0;
+  text-align: right;
+}
+
+.week-map[data-week="1"] .week-map-list > li > div {
+  z-index: 1;
+  padding-left: 5mm;
+}
+
+.week-map[data-week="1"] .week-map-list strong {
+  font: 400 14.5pt/1.1 var(--font-editorial-family), serif;
+  letter-spacing: 0;
+}
+
+.devotional-day[data-week="1"] .day-header {
+  display: flex;
+  min-height: 0;
+  margin: var(--space-md) 0 var(--space-lg);
+  padding: 0;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.devotional-day[data-week="1"] { page: sara-day; }
+
+.devotional-day[data-week="1"] .day-header::after {
+  display: none;
+  content: none;
+}
+
+/* Dorcas usa o mesmo contrato editorial de Sara, encaixado no campo opalino
+   superior que a própria cena reserva para o lockup editável. */
+.woman-opening.has-art[data-week="2"] .woman-opening-copy {
+  top: 20mm;
+  left: calc(50% + 5mm);
+  width: 118mm;
+  min-height: 0;
+  padding: 0;
+  color: var(--color-brand-volume-1);
+  text-align: center;
+  text-shadow: none;
+  transform: translateX(-50%);
+}
+
+.woman-opening.has-art[data-week="2"] .woman-opening-copy::before,
+.woman-opening.has-art[data-week="2"] .woman-opening-copy::after { content: none; }
+
+.woman-opening.has-art[data-week="2"] .opening-script {
+  margin: 0 auto -2.5mm;
+  color: #825a3c;
+  font-size: 42pt;
+  line-height: .94;
+  white-space: nowrap;
+}
+
+.woman-opening.has-art[data-week="2"] .woman-opening-copy h1 {
+  position: relative;
+  display: block;
+  width: max-content;
+  margin-right: auto;
+  margin-left: auto;
+  color: var(--color-brand-burgundy);
+  font-size: 76pt;
+  font-weight: 500;
+  line-height: .84;
+  letter-spacing: -.03em;
+  -webkit-text-stroke: .16mm #b28a45;
+  paint-order: stroke fill;
+  text-rendering: geometricPrecision;
+}
+
+.woman-opening.has-art[data-week="2"] .woman-opening-copy h1::before,
+.woman-opening.has-art[data-week="2"] .woman-opening-copy h1::after {
+  position: absolute;
+  top: 53%;
+  width: 18mm;
+  height: 3.6mm;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 14' fill='none' stroke='%23b28a45' stroke-linecap='round'%3E%3Cpath d='M2 7h88' stroke-width='1'/%3E%3Cpath d='m90 7 4-3 4 3-4 3-4-3Z' stroke-width='.8'/%3E%3Ccircle cx='82' cy='7' r='1.2' fill='%23b28a45' stroke='none'/%3E%3C/svg%3E") center / contain no-repeat;
+  content: "";
+  opacity: .82;
+  transform: translateY(-50%);
+}
+
+.woman-opening.has-art[data-week="2"] .woman-opening-copy h1::before {
+  right: calc(100% + 5mm);
+}
+
+.woman-opening.has-art[data-week="2"] .woman-opening-copy h1::after {
+  left: calc(100% + 5mm);
+  transform: translateY(-50%) scaleX(-1);
+}
+
+.woman-opening.has-art[data-week="2"] .opening-theme {
+  max-width: 82mm;
+  margin: 2.6mm auto 0;
+  color: #825a3c;
+  font: 400 9.2pt/1.2 var(--font-label-family), sans-serif;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+/* Marta mantém o lockup recorrente sobre a parede mineral calma do interior. */
+.woman-opening.has-art[data-week="3"] .woman-opening-copy {
+  top: 20mm;
+  left: 50%;
+  width: 118mm;
+  min-height: 0;
+  padding: 0;
+  color: var(--color-brand-volume-1);
+  text-align: center;
+  text-shadow: none;
+  transform: translateX(-50%);
+}
+
+.woman-opening.has-art[data-week="3"] .woman-opening-copy::before,
+.woman-opening.has-art[data-week="3"] .woman-opening-copy::after { content: none; }
+
+.woman-opening.has-art[data-week="3"] .opening-script {
+  margin: 0 auto -2.5mm;
+  color: #825a3c;
+  font-size: 42pt;
+  line-height: .94;
+  white-space: nowrap;
+}
+
+.woman-opening.has-art[data-week="3"] .woman-opening-copy h1 {
+  position: relative;
+  display: block;
+  width: max-content;
+  margin-right: auto;
+  margin-left: auto;
+  color: var(--color-brand-burgundy);
+  font-size: 82pt;
+  font-weight: 500;
+  line-height: .84;
+  letter-spacing: -.03em;
+  -webkit-text-stroke: .16mm #b28a45;
+  paint-order: stroke fill;
+  text-rendering: geometricPrecision;
+}
+
+.woman-opening.has-art[data-week="3"] .woman-opening-copy h1::before,
+.woman-opening.has-art[data-week="3"] .woman-opening-copy h1::after {
+  position: absolute;
+  top: 53%;
+  width: 18mm;
+  height: 3.6mm;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 14' fill='none' stroke='%23b28a45' stroke-linecap='round'%3E%3Cpath d='M2 7h88' stroke-width='1'/%3E%3Cpath d='m90 7 4-3 4 3-4 3-4-3Z' stroke-width='.8'/%3E%3Ccircle cx='82' cy='7' r='1.2' fill='%23b28a45' stroke='none'/%3E%3C/svg%3E") center / contain no-repeat;
+  content: "";
+  opacity: .82;
+  transform: translateY(-50%);
+}
+
+.woman-opening.has-art[data-week="3"] .woman-opening-copy h1::before {
+  right: calc(100% + 5mm);
+}
+
+.woman-opening.has-art[data-week="3"] .woman-opening-copy h1::after {
+  left: calc(100% + 5mm);
+  transform: translateY(-50%) scaleX(-1);
+}
+
+.woman-opening.has-art[data-week="3"] .opening-theme {
+  max-width: 82mm;
+  margin: 2.6mm auto 0;
+  color: #825a3c;
+  font: 400 9.2pt/1.2 var(--font-label-family), sans-serif;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+/* A Viúva do azeite mantém o lockup de Sara, ajustado ao campo calmo à
+   esquerda da janela e à extensão maior do nome. */
+.woman-opening.has-art[data-week="4"] .woman-opening-copy {
+  top: 19mm;
+  left: 53mm;
+  width: 94mm;
+  min-height: 0;
+  padding: 0;
+  color: var(--color-brand-volume-1);
+  isolation: isolate;
+  text-align: center;
+  text-shadow: none;
+  transform: translateX(-50%);
+}
+
+.woman-opening.has-art[data-week="4"] .woman-opening-copy::before,
+.woman-opening.has-art[data-week="4"] .woman-opening-copy::after { content: none; }
+
+.woman-opening.has-art[data-week="4"] .opening-script {
+  width: 78%;
+  margin: 0 auto -2.2mm;
+  color: #825a3c;
+  font-size: 44pt;
+  line-height: .94;
+  white-space: nowrap;
+}
+
+.woman-opening.has-art[data-week="4"] .woman-opening-copy h1 {
+  color: var(--color-brand-burgundy);
+  font-size: 44pt;
+  font-weight: 500;
+  line-height: .88;
+  letter-spacing: -.035em;
+  text-rendering: geometricPrecision;
+  text-shadow: none;
+}
+
+.woman-opening.has-art[data-week="4"] .opening-theme {
+  max-width: 76mm;
+  margin: 2.6mm auto 0;
+  color: #825a3c;
+  font: 400 9.2pt/1.2 var(--font-label-family), sans-serif;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+/* A Mulher hemorrágica centraliza o lockup dentro da parede opalina que se
+   abre à esquerda da multidão; o nome longo recebe somente ajuste óptico. */
+.woman-opening.has-art[data-week="5"] .woman-opening-copy {
+  top: 18mm;
+  left: 27mm;
+  width: 50mm;
+  min-height: 0;
+  padding: 0;
+  color: var(--color-brand-volume-1);
+  isolation: isolate;
+  text-align: center;
+  text-shadow: none;
+  transform: translateX(-50%);
+}
+
+.woman-opening.has-art[data-week="5"] .woman-opening-copy::before,
+.woman-opening.has-art[data-week="5"] .woman-opening-copy::after { content: none; }
+
+.woman-opening.has-art[data-week="5"] .opening-script {
+  width: 100%;
+  margin: 0 auto -1.5mm;
+  color: #825a3c;
+  font-size: 36pt;
+  line-height: .94;
+  white-space: nowrap;
+}
+
+.woman-opening.has-art[data-week="5"] .woman-opening-copy h1 {
+  max-width: 50mm;
+  margin-right: auto;
+  margin-left: auto;
+  color: var(--color-brand-burgundy);
+  font-size: 29pt;
+  font-weight: 500;
+  line-height: .88;
+  letter-spacing: -.035em;
+  text-align: center;
+  text-rendering: geometricPrecision;
+  text-shadow: none;
+}
+
+.woman-opening.has-art[data-week="5"] .opening-theme {
+  max-width: 50mm;
+  margin: 2.8mm auto 0;
+  color: #825a3c;
+  font: 400 9.2pt/1.2 var(--font-label-family), sans-serif;
+  letter-spacing: .16em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Contrato universal das vinte aberturas. A cena define somente a posição
+   óptica do lockup; família, paleta, escala semântica e contraste não variam. */
+.woman-opening.has-art[data-week] .opening-script {
+  margin-top: 0;
+  color: #55182a;
+  font: 400 42pt/.94 var(--font-accent-family), cursive;
+  text-shadow: 0 0 .45mm rgba(239, 231, 218, .84);
+  -webkit-text-stroke: .05mm #55182a;
+  white-space: nowrap;
+}
+
+.woman-opening.has-art[data-week] .woman-opening-copy h1 {
+  max-width: 118mm;
+  color: #5d202d;
+  font-family: var(--font-editorial-family), serif;
+  font-size: 58pt;
+  font-weight: 500;
+  line-height: .86;
+  letter-spacing: -.03em;
+  text-align: center;
+  text-shadow: 0 0 .7mm rgba(239, 231, 218, .94);
+  -webkit-text-stroke: .16mm #9b6a32;
+  paint-order: stroke fill;
+}
+
+.woman-opening.has-art[data-week][data-name-length="short"] .woman-opening-copy h1 { font-size: 70pt; }
+.woman-opening.has-art[data-week][data-name-length="long"] .woman-opening-copy h1 { font-size: 40pt; line-height: .9; }
+
+.woman-opening.has-art[data-week] .opening-theme {
+  max-width: 82mm;
+  margin: 2.8mm auto 0;
+  color: #5c2a25;
+  font: 400 9.2pt/1.2 var(--font-label-family), sans-serif;
+  letter-spacing: .16em;
+  text-align: center;
+  text-shadow: 0 0 .55mm rgba(239, 231, 218, .92);
+  text-transform: uppercase;
+}
+
+/* As artes posteriores já foram compostas com céu de respiro no topo. */
+.woman-opening.has-art[data-week]:not(:is([data-week="1"], [data-week="2"], [data-week="3"], [data-week="4"], [data-week="5"])) .woman-opening-copy {
+  top: 18mm;
+  left: 8mm;
+  width: 78mm;
+  min-height: 0;
+  padding: 0;
+  text-align: center;
+  transform: none;
+}
+
+/* Ana e Safira reservam o campo editorial contínuo na metade direita da
+   parede; o lockup mantém a mesma escala e centralização das demais semanas. */
+.woman-opening.has-art:is([data-week="14"], [data-week="15"]):not(.is-absence) .woman-opening-copy {
+  left: 74mm;
+  right: 8mm;
+}
+
+/* Hagar oferece um céu alto e contínuo; a pequena elevação evita que a linha
+   temática encoste na copa do arbusto junto à nascente. */
+.woman-opening.has-art[data-week="17"]:not(.is-absence) .woman-opening-copy {
+  top: 10mm;
+}
+
+/* Área operacional segura das páginas hero. A paridade segue o fluxo real do
+   livro para não criar páginas vazias artificiais. Por isso, a reserva
+   provisória de furação é protegida dos dois lados: o fundo continua full
+   bleed, mas texto e motivo principal permanecem no núcleo central. */
+.woman-opening.has-art,
+.woman-closure {
+  break-before: page;
+  page-break-before: always;
+}
+
+.woman-opening.has-art .woman-opening-copy,
+.woman-closure .woman-closure-quote {
+  box-sizing: border-box;
+  max-width: calc(100% - 2 * var(--margin-inner));
+}
+
+.woman-opening.has-art:is([data-week="1"], [data-week="2"], [data-week="3"]) .woman-opening-copy {
+  left: 50%;
+  width: 116mm;
+  transform: translateX(-50%);
+}
+
+.woman-opening.has-art[data-week="4"] .woman-opening-copy {
+  left: var(--margin-inner);
+  width: 78mm;
+  transform: none;
+}
+
+.woman-opening.has-art[data-week="5"] .woman-opening-copy {
+  top: var(--margin-top);
+  left: var(--margin-inner);
+  width: 50mm;
+  transform: none;
+}
+
+.woman-opening.has-art[data-week]:not(:is([data-week="1"], [data-week="2"], [data-week="3"], [data-week="4"], [data-week="5"], [data-week="14"], [data-week="15"])) .woman-opening-copy {
+  left: var(--margin-inner);
+  width: 78mm;
+}
+
+.woman-opening.has-art:is([data-week="14"], [data-week="15"]):not(.is-absence) .woman-opening-copy {
+  right: var(--margin-inner);
+  left: auto;
+  width: 71mm;
+}
+
+.woman-opening.has-art[data-week="17"]:not(.is-absence) .woman-opening-copy {
+  top: var(--margin-top);
+}
+
+/* Ajustes ópticos comprovados das aberturas: Débora desce para o campo de
+   montanhas sem tocar a palmeira; Mulher de Ló usa uma linha equilibrada no
+   céu e nunca deixa apenas “Ló” isolado. */
+.woman-opening.has-art[data-week][data-week="5"]:not(.is-absence) .opening-script {
+  font-size: 36pt;
+}
+
+.woman-opening.has-art[data-week][data-week="5"]:not(.is-absence) .woman-opening-copy h1 {
+  max-width: 50mm;
+  font-size: 29pt;
+  line-height: .88;
+}
+
+.woman-opening.has-art[data-week][data-week="6"]:not(.is-absence) .woman-opening-copy {
+  top: 18mm;
+  left: calc(var(--margin-inner) + 5mm);
+  width: 72mm;
+  padding: 0;
+  background: transparent;
+}
+
+.woman-opening.has-art[data-week][data-week="6"]:not(.is-absence) .woman-opening-copy h1 {
+  font-size: 60pt;
+}
+
+.woman-opening.has-art[data-week][data-week="7"]:not(.is-absence) .woman-opening-copy {
+  top: var(--margin-top);
+  right: var(--margin-inner);
+  left: auto;
+  width: 116mm;
+}
+
+.woman-opening.has-art[data-week][data-week="7"]:not(.is-absence) .woman-opening-copy h1 {
+  max-width: 116mm;
+  font-size: 45pt;
+  line-height: .92;
+  white-space: nowrap;
+}
+
+/* Ajustes ópticos das aberturas com elementos verticais próximos ao lockup.
+   O nome e os dois filetes permanecem inteiros dentro do campo livre da arte. */
+.woman-opening.has-art[data-week="4"]:not(.has-integrated-wordmark) .woman-opening-copy {
+  left: 20mm;
+  width: 78mm;
+}
+
+.woman-opening.has-art[data-week="4"]:not(.has-integrated-wordmark) .woman-opening-copy h1 {
+  width: 78mm;
+  max-width: 78mm;
+  font-size: 34pt;
+  line-height: .86;
+  text-wrap: balance;
+  white-space: normal;
+}
+
+.woman-opening.has-art[data-week="11"]:not(.has-integrated-wordmark) .woman-opening-copy,
+.woman-opening.has-art[data-week="16"]:not(.has-integrated-wordmark) .woman-opening-copy {
+  left: 22mm;
+  width: 68mm;
+}
+
+.woman-opening.has-art[data-week="11"]:not(.has-integrated-wordmark) .woman-opening-copy h1,
+.woman-opening.has-art[data-week="16"]:not(.has-integrated-wordmark) .woman-opening-copy h1 {
+  width: 68mm;
+  max-width: 68mm;
+  font-size: 42pt;
+  line-height: .86;
+  text-wrap: balance;
+}
+
+.woman-opening.has-art[data-week="19"]:not(.has-integrated-wordmark) .woman-opening-copy {
+  left: 18mm;
+  width: 62mm;
+}
+
+.woman-opening.has-art[data-week="19"]:not(.has-integrated-wordmark) .opening-script {
+  font-size: 34pt;
+}
+
+/* O céu da Mulher hemorrágica é contínuo em toda a metade superior. O lockup
+   ocupa o eixo óptico da página, em vez de ficar preso ao canto esquerdo. */
+.woman-opening.has-art[data-week="5"]:not(.has-integrated-wordmark) .woman-opening-copy {
+  left: 50%;
+  width: 106mm;
+  transform: translateX(-50%);
+}
+
+.woman-opening.has-art[data-week="5"]:not(.has-integrated-wordmark) .woman-opening-copy h1 {
+  width: 86mm;
+  max-width: 86mm;
+  font-size: 30pt;
+  white-space: nowrap;
+}
+
+.woman-closure[data-week="1"] .woman-closure-quote,
+.woman-closure[data-week="2"] .woman-closure-quote,
+.woman-closure[data-week="3"] .woman-closure-quote,
+.woman-closure[data-week="4"] .woman-closure-quote,
+.woman-closure[data-week="12"] .woman-closure-quote,
+.woman-closure[data-week="16"] .woman-closure-quote,
+.woman-closure[data-week="17"] .woman-closure-quote,
+.woman-closure[data-week="19"] .woman-closure-quote,
+.woman-closure[data-week="20"] .woman-closure-quote {
+  right: var(--margin-inner);
+  left: auto;
+  transform: none;
+}
+
+.woman-closure[data-week="5"] .woman-closure-quote,
+.woman-closure[data-week="6"] .woman-closure-quote,
+.woman-closure[data-week="8"] .woman-closure-quote,
+.woman-closure[data-week="10"] .woman-closure-quote,
+.woman-closure[data-week="13"] .woman-closure-quote,
+.woman-closure[data-week="14"] .woman-closure-quote,
+.woman-closure[data-week="15"] .woman-closure-quote,
+.woman-closure[data-week="18"] .woman-closure-quote {
+  right: auto;
+  left: var(--margin-inner);
+  transform: none;
+}
+
+.woman-closure:is([data-week="7"], [data-week="9"], [data-week="11"]) .woman-closure-quote {
+  left: 50%;
+  width: 106mm;
+  transform: translateX(-50%);
+}
+
+.woman-closure[data-week="20"] .woman-closure-quote {
+  right: var(--margin-inner);
+}
+
+/* Ester abre a porta no eixo esquerdo; a síntese permanece inteiramente no
+   campo marfim à direita, sem atravessar o vitral da folha da porta. */
+.woman-closure[data-week="19"] .woman-closure-quote {
+  top: 18mm;
+  right: var(--margin-inner);
+  left: auto;
+  width: 60mm;
+  transform: none;
+}
+
+/* Lia afasta a frase da romãzeira; o bloco repousa no halo claro à direita. */
+.woman-closure[data-week="12"] .woman-closure-quote {
+  top: 30mm;
+  right: 6mm;
+  left: auto;
+  width: 72mm;
+  transform: none;
+}
+
+/* Ana preserva o caixilho e a folhagem da janela, usando a parede clara. */
+.woman-closure[data-week="14"] .woman-closure-quote {
+  top: 20mm;
+  right: auto;
+  left: 48mm;
+  width: 70mm;
+  transform: none;
+}
+
+/* Rebeca e Safira preservam a frase integralmente dentro do campo opalino,
+   antes do cabelo/caixilho e da abertura luminosa da porta. */
+.woman-closure[data-week="13"] .woman-closure-quote {
+  top: 18mm;
+  right: auto;
+  left: var(--margin-inner);
+  width: 58mm;
+  transform: none;
+}
+
+.woman-closure[data-week="15"] .woman-closure-quote {
+  top: 20mm;
+  right: auto;
+  left: var(--margin-inner);
+  width: 62mm;
+  transform: none;
+}
+
+/* Percurso e pausa de integração são páginas editoriais e, portanto, exibem
+   fólio. Capas, aberturas e encerramentos ilustrados continuam sem número. */
+@page atlas {
+  @bottom-center {
+    width: 18mm;
+    height: 12mm;
+    padding-top: 4.2mm;
+    background: none;
+    color: var(--color-ink);
+    content: counter(page);
+    font: 500 10pt/1 var(--font-editorial-family), serif;
+  }
+}
+
+.woman-breathing-page::after {
+  position: absolute;
+  bottom: 7mm;
+  left: 50%;
+  color: var(--color-ink);
+  content: counter(page);
+  font: 500 10pt/1 var(--font-editorial-family), serif;
+  transform: translateX(-50%);
+}
+
+.devotional-day[data-week="1"] .day-sequence {
+  position: static;
+  inset: auto;
+  display: flex;
+  width: auto;
+  min-height: 0;
+  margin: var(--space-xs) auto var(--space-sm);
+  padding: 0;
+  gap: var(--space-xs);
+  align-items: baseline;
+  background: none;
+}
+
+.day-page-progress {
+  position: running(day-page-progress);
+  display: flex;
+  width: max-content;
+  max-width: none;
+  gap: 1.6mm;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.day-page-progress-label {
+  display: inline-flex;
+  gap: .8mm;
+  align-items: baseline;
+  color: var(--color-ink-soft);
+  font: 600 5.8pt/1 var(--font-label-family), sans-serif;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.day-page-progress-dots {
+  display: flex;
+  gap: .65mm;
+  align-items: center;
+}
+
+.devotional-day[data-week="1"] .day-sequence::before {
+  content: none;
+}
+
+.devotional-day[data-week="1"] .day-sequence span,
+.devotional-day[data-week="1"] .day-sequence strong {
+  margin: 0;
+  color: var(--color-heading);
+  font: 400 24pt/.88 var(--font-accent-family), cursive;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.day-page-progress i {
+  display: block;
+  width: 2.1mm;
+  height: 2.1mm;
+  overflow: hidden;
+  color: color-mix(in srgb, var(--color-heading) 84%, var(--color-paper));
+  border: var(--space-hairline) solid color-mix(in srgb, var(--color-heading) 72%, transparent);
+  border-radius: 50%;
+  background: linear-gradient(90deg, currentColor 0 var(--progress-fill, 0%), transparent var(--progress-fill, 0%) 100%);
+}
+
+.day-page-progress i[data-progress-state="complete"] { --progress-fill: 100%; }
+.day-page-progress i[data-progress-state="current"] { --progress-fill: 0%; }
+
+.devotional-day[data-week="1"] .day-header h1 {
+  max-width: 112mm;
+  margin: var(--space-sm) auto 0;
+  font-size: 35pt;
+  font-weight: 400;
+  line-height: .94;
+  hyphens: none;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.devotional-day[data-week="1"] .day-header[data-title-length="long"] h1 {
+  max-width: 104mm;
+  font-size: 31pt;
+  line-height: .97;
+}
+
+.devotional-day[data-week="1"] .day-header[data-title-length="short"] h1 { font-size: 38pt; }
+
+.devotional-day[data-week="1"] .day-theme {
+  display: none;
+}
+
+.day-narrative-specimen { display: none; }
+
+/* Ilustrações narrativas monocromáticas ocupam o respiro como presença
+   editorial, nunca como vinheta. A escala-base, o preto suavizado e o traço
+   delicado passam a valer para todas as mulheres; cada formato recebe somente
+   ajuste óptico comprovado. */
+.live-book .devotional-day[data-week] .day-narrative-specimen {
+  display: block;
+  width: 100%;
+  height: 70mm;
+  margin: 7mm auto 5mm;
+  padding: 3mm 0;
+  box-sizing: border-box;
+  overflow: visible;
+  float: none;
+  break-inside: avoid-page;
+  break-after: avoid-page;
+  page-break-inside: avoid;
+  page-break-after: avoid;
+}
+
+.live-book .devotional-day[data-week] .day-narrative-specimen img {
+  display: block;
+  width: 112mm;
+  max-width: none;
+  height: 64mm;
+  max-height: none;
+  margin: 0 auto;
+  object-fit: contain;
+  object-position: center;
+  opacity: .84;
+  transform: none;
+  transform-origin: center;
+}
+
+/* A carroça horizontal precisa preencher o vazio sem voltar a ter peso de
+   mancha. O aumento é de presença, preservando o tom e a delicadeza aprovados. */
+.live-book .devotional-day[data-week="1"] .day-narrative-specimen {
+  display: block;
+  height: 70mm;
+  margin: 7mm auto 5mm;
+  padding: 3mm 0;
+  box-sizing: border-box;
+  overflow: visible;
+  float: none;
+  break-inside: avoid-page;
+  page-break-inside: avoid;
+}
+
+.live-book .devotional-day[data-week="1"] .day-narrative-specimen img {
+  width: 100%;
+  max-width: 112mm;
+  height: 100%;
+  max-height: 64mm;
+  margin: 0 auto;
+  transform: none;
+}
+
+/* O manto é mais vertical que a carroça; em Dorcas ele ocupa o vazio como
+   ilustração editorial central, sem ser reduzido à escala de vinheta. */
+.live-book .devotional-day[data-week="2"] .day-narrative-specimen {
+  height: 70mm;
+  margin: 7mm auto 5mm;
+}
+
+.live-book .devotional-day[data-week="2"] .day-narrative-specimen img {
+  max-width: 112mm;
+  max-height: 64mm;
+  transform: none;
+}
+
+.live-book .devotional-day[data-week]
+  :is(.placement-after_scripture, .placement-before_reflection, .placement-silence_outer_margin, .placement-end_of_day) {
+  margin: 7mm auto 5mm;
+}
+
+.live-book .devotional-day[data-week="1"] .placement-end_of_day { margin: 7mm auto 5mm; }
+
+.devotional-day[data-week="1"] .component-opening > blockquote,
+.devotional-day[data-week="1"] .component-deeper-note,
+.devotional-day[data-week="1"] .component-prayer,
+.devotional-day[data-week="1"] .component-silence,
+.devotional-day[data-week="1"] .component-truth,
+.devotional-day[data-week="1"] .component-song { border: 0; }
+
+.devotional-day[data-week="1"] .component-silence::before,
+.devotional-day[data-week="1"] .component-truth::after,
+.devotional-day[data-week="1"] .component-song::before { content: none; }
+
+.devotional-day[data-week="1"] .component-heading span {
+  color: var(--color-heading);
+  font: 400 17pt/1.08 var(--font-editorial-family), serif;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.devotional-day[data-week="1"] .component-opening .component-heading span {
+  color: var(--color-heading);
+  font: 400 28pt/.96 var(--font-accent-family), cursive;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.devotional-day[data-week="1"]
+  :is(.component-reading, .component-silence, .component-reflection, .component-christ, .component-conversation, .component-prayer, .component-keepsake, .component-heart, .component-truth, .component-song, .component-deeper-note)
+  > .component-heading {
+  position: relative;
+  display: grid;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 0;
+  margin: 0 auto 6mm;
+  padding-top: 0;
+  grid-template-columns: 11mm minmax(0, max-content);
+  column-gap: var(--space-xs);
+  row-gap: var(--space-xs);
+  align-items: center;
+  justify-content: center;
+  background: none;
+  text-align: left;
+  vertical-align: top;
+}
+
+.devotional-day[data-week="1"]
+  :is(.component-reading, .component-silence, .component-reflection, .component-christ, .component-conversation, .component-prayer, .component-keepsake, .component-heart, .component-truth, .component-song, .component-deeper-note)
+  > .component-heading::before {
+  width: 11mm;
+  height: 11mm;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  grid-column: 1;
+  grid-row: 1;
+  transform: translateY(-.2mm);
+}
+
+.devotional-day[data-week="1"]
+  :is(.component-reading, .component-silence, .component-reflection, .component-christ, .component-conversation, .component-prayer, .component-keepsake, .component-heart, .component-truth, .component-song, .component-deeper-note)
+  > .component-heading span {
+  max-width: 101mm;
+  color: var(--color-heading);
+  font: 400 23pt/.98 var(--font-accent-family), cursive;
+  letter-spacing: 0;
+  text-transform: none;
+  text-wrap: balance;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.devotional-day[data-week="1"]
+  :is(.component-reading, .component-silence, .component-reflection, .component-christ, .component-conversation, .component-prayer, .component-keepsake, .component-heart, .component-truth, .component-song, .component-deeper-note)
+  > .component-heading strong {
+  max-width: 101mm;
+  margin: 0;
+  color: var(--color-ink-soft);
+  font: 500 7.5pt/1.25 var(--font-label-family), sans-serif;
+  letter-spacing: .045em;
+  text-align: left;
+  text-transform: uppercase;
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.devotional-day[data-week="1"] .component-reading > .component-heading::before { background-image: var(--week-scripture-image, none); }
+.devotional-day[data-week="1"] .component-silence > .component-heading::before { background-image: var(--week-silence-image, none); }
+.devotional-day[data-week="1"] .component-reflection > .component-heading::before { background-image: var(--week-reflection-image, none); }
+.devotional-day[data-week="1"] .component-deeper-note > .component-heading::before { background-image: var(--week-deeper-note-image, none); }
+.devotional-day[data-week="1"] .component-christ > .component-heading::before { background-image: var(--week-christ-image, none); }
+.devotional-day[data-week="1"] .component-conversation > .component-heading::before { background-image: var(--week-conversation-image, none); }
+.devotional-day[data-week="1"] .component-prayer > .component-heading::before { background-image: var(--week-prayer-image, none); }
+.devotional-day[data-week="1"] :is(.component-keepsake, .component-heart) > .component-heading::before { background-image: var(--week-heart-image, none); }
+.devotional-day[data-week="1"] .component-truth > .component-heading::before { background-image: var(--week-truth-image, none); }
+.devotional-day[data-week="1"] .component-song > .component-heading::before { background-image: var(--week-song-image, none); }
+
+.devotional-day[data-week="1"]
+  :is(.component-reading, .component-silence, .component-reflection, .component-christ, .component-conversation, .component-prayer, .component-keepsake, .component-heart, .component-truth, .component-song, .component-deeper-note)
+  > .component-heading::after {
+  content: none;
+}
+
+.devotional-day[data-week="1"] .scripture-quotation::after,
+.devotional-day[data-week="1"] .component-prayer::after,
+.devotional-day[data-week="1"] .component-silence::after,
+.devotional-day[data-week="1"] .editorial-pull-quote::before { content: none; }
+
+.devotional-day[data-week="1"] .editorial-pull-quote {
+  padding-left: 0;
+  text-align: center;
+}
+
+.devotional-day[data-week="1"] .scripture-quotation,
+.devotional-day[data-week="1"] .component-deeper-note {
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.devotional-day[data-week="1"] .scripture-quotation {
+  max-width: 88mm;
+  margin: var(--space-lg) auto var(--space-xl);
+  padding: var(--space-xs) 0 var(--space-xs) var(--space-md);
+  border-left: .28mm solid color-mix(in srgb, var(--color-interior-secondary) 78%, transparent);
+  color: var(--color-ink-soft);
+  font-size: 13pt;
+  font-weight: 400;
+  line-height: 1.38;
+  text-align: left;
+}
+
+.devotional-day[data-week="1"] .scripture-quotation p { margin: 0; }
+
+.devotional-day[data-week="1"] .component-prayer {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.devotional-day[data-week="1"] .scripture-quotation::before {
+  content: none;
+}
+
+.devotional-day[data-week="1"] .component-deeper-note::before {
+  content: none;
+}
+
+.devotional-day[data-week="1"] .component-prayer::before { content: none; }
+
+.devotional-day[data-week="1"] .editorial-pull-quote {
+  position: relative;
+  max-width: 88mm;
+  margin: var(--space-lg) auto;
+  padding: var(--space-md) 0 0;
+  border: 0;
+  font-size: 15.5pt;
+  line-height: 1.16;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.devotional-day[data-week="1"] .editorial-pull-quote::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 17mm;
+  height: 17mm;
+  background: var(--week-silence-image, none) center / contain no-repeat;
+  content: "";
+}
+
+.devotional-day[data-week="1"] .component-silence {
+  min-height: 44mm;
+  margin: var(--space-lg) 0 var(--space-xl);
+  padding: var(--space-lg) var(--space-xl);
+  text-align: center;
+}
+
+.devotional-day[data-week="1"] .component-silence p {
+  max-width: 94mm;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.devotional-day[data-week="1"] .component-silence::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 16mm;
+  height: 16mm;
+  background: var(--week-silence-image, none) center / contain no-repeat;
+  content: "";
+}
+
+.devotional-day[data-week="1"] .component-reflection { counter-reset: reflection-question; }
+
+.devotional-day[data-week="1"] .reflection-prompt {
+  position: relative;
+  display: grid;
+  margin-bottom: var(--space-lg);
+  grid-template-columns: 4.8mm minmax(0, 1fr);
+  column-gap: var(--space-sm);
+  counter-increment: reflection-question;
+}
+
+.devotional-day[data-week="1"] .reflection-prompt::before {
+  display: flex;
+  width: 4.8mm;
+  height: 6.8mm;
+  padding-right: 0;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  color: var(--color-ink-soft);
+  content: counter(reflection-question, decimal-leading-zero);
+  font: 400 10.5pt/.95 var(--font-accent-family), cursive;
+}
+
+.devotional-day[data-week="1"] .reflection-prompt > p,
+.devotional-day[data-week="1"] .reflection-prompt > .writing-lines { grid-column: 2; }
+
+.devotional-day[data-week="1"] .component-reflection .reflection-prompt > p {
+  font-size: 12.5pt;
+  line-height: 1.28;
+  text-align: left;
+}
+
+.devotional-day[data-week="1"] .component-christ { padding-top: 0; }
+
+.devotional-day[data-week="1"] .component-truth { padding-top: 4mm; }
+
+.devotional-day[data-week="1"] .component-christ::before,
+.devotional-day[data-week="1"] .component-truth::before,
+.devotional-day[data-week="1"] .component-song::before { content: none; }
+
+.devotional-day[data-week="1"]
+  :is(.component-christ, .component-deeper-note, .component-keepsake, .component-truth, .component-song)
+  .component-heading {
+  text-align: center;
+}
+
+.devotional-day[data-week="1"]
+  :is(.component-christ, .component-truth, .component-song)
+  > .component-heading::after {
+  content: none;
+}
+
+.devotional-day[data-week="1"] .component-truth::after { content: none; }
+
+.devotional-day[data-week="1"] .scripture-quotation::after,
+.devotional-day[data-week="1"] .component-prayer::after,
+.devotional-day[data-week="1"] .component-silence::after,
+.devotional-day[data-week="1"] .editorial-pull-quote::before { content: none; }
+
+.devotional-day[data-week="1"] .component-song {
+  margin-top: 0;
+  padding-top: var(--space-xs);
+}
+
+/* Gramática editorial autoritativa: estrutura, respiração e ritual.
+   Uma função recebe um sinal; caixas fechadas ficam restritas à escrita. */
+.devotional-day[data-week="1"] .component-opening > blockquote:not(.scripture-quotation),
+.devotional-day[data-week="1"] .editorial-pull-quote {
+  max-width: 90mm;
+  margin: var(--space-lg) auto;
+  padding: var(--space-xs) var(--space-sm) var(--space-xs) var(--space-md);
+  border: 0;
+  border-left: .35mm solid color-mix(in srgb, var(--color-interior-secondary) 76%, transparent);
+  color: var(--color-heading);
+  text-align: center;
+  text-wrap: balance;
+}
+
+.devotional-day[data-week="1"] .component-deeper-note {
+  max-width: 104mm;
+  margin: var(--space-lg) auto;
+  padding: var(--space-md) var(--space-lg);
+  border: 0;
+  border-top: .15mm solid var(--color-line);
+  border-bottom: .15mm solid var(--color-line);
+  background: color-mix(in srgb, var(--color-ink) 3.5%, transparent);
+}
+
+.devotional-day[data-week="1"] .component-keepsake {
+  max-width: 104mm;
+  margin: var(--space-lg) auto;
+  padding: var(--space-md) var(--space-lg);
+  border: .15mm solid var(--color-line);
+}
+
+.devotional-day[data-week="1"] .component-truth {
+  max-width: 104mm;
+  margin: var(--space-xl) auto var(--space-lg);
+  padding: var(--space-md) var(--space-sm);
+  border: 0;
+  border-top: .18mm solid var(--color-line);
+  border-bottom: .18mm solid var(--color-line);
+  background: transparent;
+}
+
+.devotional-day[data-week="1"] .component-christ::before {
+  display: none;
+  content: none;
+}
+
+/* Três espaços recorrentes, três sinais: Escritura contida, silêncio aberto
+   nos quatro cantos e oração acolhida por dois cantos opostos. */
+.devotional-day[data-week="1"] .scripture-quotation {
+  max-width: 94mm;
+  margin: var(--space-lg) auto var(--space-xl);
+  padding: var(--space-md);
+  border-top: .18mm solid color-mix(in srgb, var(--color-interior-secondary) 72%, transparent);
+  border-right: .18mm solid color-mix(in srgb, var(--color-interior-secondary) 72%, transparent);
+  border-bottom: .18mm solid color-mix(in srgb, var(--color-interior-secondary) 72%, transparent);
+  border-left: .18mm solid color-mix(in srgb, var(--color-interior-secondary) 72%, transparent);
+  background: color-mix(in srgb, var(--color-paper) 96%, var(--color-ink));
+  color: var(--color-heading);
+  text-align: center;
+  break-inside: avoid;
+}
+
+.devotional-day[data-week="1"] .component-silence {
+  position: relative;
+  max-width: 104mm;
+  margin: var(--space-lg) auto var(--space-xl);
+  padding: var(--space-lg);
+  border: 0;
+  background: none;
+}
+
+.devotional-day[data-week="1"] .component-silence::before {
+  content: none;
+}
+
+.devotional-day[data-week="1"] .component-silence::after {
+  content: none;
+}
+
+.devotional-day[data-week="1"] .component-opening > blockquote:not(.scripture-quotation),
+.devotional-day[data-week="1"] .editorial-pull-quote {
+  position: relative;
+  padding-left: var(--space-md);
+  border: 0;
+  border-left: .35mm solid color-mix(in srgb, var(--color-interior-secondary) 48%, transparent);
+}
+
+.devotional-day[data-week="1"] .component-opening > blockquote:not(.scripture-quotation)::before,
+.devotional-day[data-week="1"] .editorial-pull-quote::before {
+  content: none;
+}
+
+.devotional-day[data-week="1"] .component-prayer {
+  position: relative;
+  max-width: 102mm;
+  margin: var(--space-sm) auto;
+  padding: var(--space-xs) var(--space-lg);
+  border: 0;
+  background: url("../assets/ilustracoes/specimens/oficial/semana-01-sara/raster/sara-prayer-four-straight-corners-subtle-imagegen-v004.webp?v=488b7e8") center / 100% 100% no-repeat;
+  font-style: italic;
+  text-align: left;
+  break-inside: avoid;
+}
+
+.devotional-day[data-week="1"] .component-prayer > .component-heading {
+  margin-bottom: var(--space-sm);
+}
+
+.devotional-day[data-week="1"] .component-christ {
+  max-width: 104mm;
+  margin: var(--space-md) auto;
+  padding: var(--space-md) var(--space-lg);
+  border: 0;
+  background: none;
+  break-inside: avoid;
+}
+
+/* Refinamento editorial aprovado em revisão: percurso sem emblema, índice
+   com operação diária e progresso de volume apoiado por came botânico. */
+.week-map[data-week="1"] header {
+  grid-template-columns: 1fr;
+}
+
+.week-map[data-week="1"] .week-map-script,
+.week-map[data-week="1"] h1 {
+  grid-column: 1;
+}
+
+.week-map[data-week="1"] .week-map-list > li > div {
+  display: grid;
+  gap: var(--space-xs);
+}
+
+.week-map[data-week="1"] .week-map-list small {
+  display: block;
+  color: var(--color-ink-soft);
+  font: 500 6.4pt/1.2 var(--font-label-family), sans-serif;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+}
+
+/* O percurso aprovado em Sara é estrutura recorrente das vinte jornadas.
+   A espinha ornamental continua própria de cada mulher; na ausência de ativo,
+   um came neutro preserva o eixo sem importar a amendoeira de Sara. */
+.week-map[data-week] {
+  position: relative;
+  display: flex;
+  width: auto;
+  min-height: 184mm;
+  height: 184mm;
+  padding: 5mm 0 0;
+  flex-direction: column;
+  overflow: visible;
+}
+
+.week-map[data-week] header {
+  position: relative;
+  display: grid;
+  width: 100%;
+  margin-bottom: 5mm;
+  padding-bottom: 0;
+  border: 0;
+  grid-template-columns: 1fr;
+  align-items: end;
+  justify-content: center;
+  text-align: center;
+}
+
+.week-map[data-week] header::after,
+.week-map[data-week] .week-map-emblem { content: none; display: none; }
+
+.week-map[data-week] .week-map-script {
+  grid-column: 1;
+  margin: 0;
+  font: 400 48pt/.9 var(--font-accent-family), cursive;
+}
+
+.week-map[data-week] h1 {
+  grid-column: 1;
+  margin: 0;
+  font-size: 36pt;
+  font-weight: 400;
+  line-height: .92;
+}
+
+.week-map[data-week] .week-map-list {
+  position: relative;
+  display: grid;
+  width: 122mm;
+  min-height: 0;
+  margin: 0 auto;
+  flex: 1;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(7, minmax(0, 1fr));
+  gap: 0;
+}
+
+.week-map[data-week] .week-map-list::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 16mm;
+  width: 13mm;
+  background: var(--week-timeline-spine-image, linear-gradient(90deg, transparent calc(50% - .09mm), var(--color-line) calc(50% - .09mm), var(--color-line) calc(50% + .09mm), transparent calc(50% + .09mm))) center / 13mm 100% no-repeat;
+  content: "";
+}
+
+.week-map[data-week] .week-map-list li,
+.week-map[data-week] .week-map-list li:nth-child(even),
+.week-map[data-week] .week-map-list li:nth-child(3n) {
+  position: relative;
+  display: grid;
+  min-height: 0;
+  margin: 0;
+  padding: 1.8mm 0;
+  grid-template-columns: 25mm minmax(0, 1fr);
+  align-items: center;
+}
+
+/* Todas as jornadas usam a mesma malha. Experimentos antigos por semana
+   criavam uma escada visual, sobretudo no percurso de Maria de Betânia. */
+.week-map[data-week] .week-map-list li:nth-child(n) {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.week-map[data-week] .week-map-list li::after { content: none; }
+
+.week-map[data-week] .week-map-list > li > span {
+  z-index: 2;
+  display: block;
+  width: 16mm;
+  min-height: 0;
+  padding: 1mm 1.5mm 1mm 0;
+  border: 0;
+  background: var(--color-paper);
+  color: var(--color-heading);
+  font: 400 15pt/.92 var(--font-accent-family), cursive;
+  letter-spacing: 0;
+  text-align: right;
+  transform: none;
+}
+
+.week-map[data-week] .week-map-list > li > div {
+  z-index: 1;
+  display: grid;
+  padding-left: 5mm;
+  gap: var(--space-xs);
+}
+
+.week-map[data-week] .week-map-list strong {
+  font: 400 14.5pt/1.1 var(--font-editorial-family), serif;
+  letter-spacing: 0;
+}
+
+.week-map[data-week] .week-map-list small {
+  display: block;
+  color: var(--color-ink-soft);
+  font: 500 6.4pt/1.2 var(--font-label-family), sans-serif;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+}
+
+@page sara-day:left {
+  @top-left { border: 0; }
+  @top-right {
+    width: calc(var(--space-xxl) * 3 + var(--space-lg));
+    padding-bottom: var(--space-xs);
+    border: 0;
+    content: element(day-page-progress);
+    text-align: right;
+  }
+  @bottom-center { border: 0; }
+}
+
+@page sara-day:right {
+  @top-left { border: 0; }
+  @top-right {
+    width: calc(var(--space-xxl) * 3 + var(--space-lg));
+    padding-bottom: var(--space-xs);
+    border: 0;
+    content: element(day-page-progress);
+    text-align: right;
+  }
+  @bottom-center { border: 0; }
+}
+
+/* Filetes de ouro envelhecido integram os vinte nomes à mesma linguagem. A
+   versão compacta cabe nos campos editoriais estreitos sem tocar letras,
+   figuras, bordas ou reserva de segurança. */
+.woman-opening.has-art[data-week]:not(.has-integrated-wordmark) {
+  --opening-name-rail-width: 6mm;
+  --opening-name-rail-gap: 2mm;
+}
+
+.woman-opening.has-art[data-week][data-name-length="short"]:not(.has-integrated-wordmark) {
+  --opening-name-rail-width: 6mm;
+}
+
+.woman-opening.has-art[data-week][data-name-length="long"]:not(.has-integrated-wordmark) {
+  --opening-name-rail-width: 4.5mm;
+  --opening-name-rail-gap: 2mm;
+}
+
+.woman-opening.has-art[data-week]:not(.has-integrated-wordmark) .woman-opening-copy h1 {
+  position: relative;
+  display: block;
+  width: max-content;
+  margin-right: auto;
+  margin-left: auto;
+  -webkit-text-stroke: .18mm #956229;
+  paint-order: stroke fill;
+}
+
+.woman-opening.has-art[data-week]:not(.has-integrated-wordmark) .woman-opening-copy h1::before,
+.woman-opening.has-art[data-week]:not(.has-integrated-wordmark) .woman-opening-copy h1::after {
+  position: absolute;
+  top: 53%;
+  width: var(--opening-name-rail-width);
+  height: 3.6mm;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 14' fill='none' stroke='%236f421f' stroke-linecap='round'%3E%3Cpath d='M2 7h88' stroke-width='1.7'/%3E%3Cpath d='m90 7 4-3 4 3-4 3-4-3Z' stroke-width='1.35'/%3E%3Ccircle cx='82' cy='7' r='1.55' fill='%236f421f' stroke='none'/%3E%3C/svg%3E") center / contain no-repeat;
+  content: "";
+  filter: drop-shadow(0 0 .18mm rgba(248, 241, 228, .96));
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+.woman-opening.has-art[data-week]:not(.has-integrated-wordmark) .woman-opening-copy h1::before {
+  right: calc(100% + var(--opening-name-rail-gap));
+}
+
+.woman-opening.has-art[data-week]:not(.has-integrated-wordmark) .woman-opening-copy h1::after {
+  left: calc(100% + var(--opening-name-rail-gap));
+  transform: translateY(-50%) scaleX(-1);
+}
+
+/* Sistema compartilhado oficial.
+   As quatro jornadas de controle validam estas regras, mas não as encapsulam:
+   função, tipografia, ritmo e quebra pertencem aos 140 dias. Cada mulher pode
+   trocar apenas ativos ornamentais e ajustes ópticos documentados. */
+.live-book .devotional-day[data-week] {
+  text-align: left;
+}
+
+.woman-emblem-pause {
+  display: flex;
+  width: 100%;
+  min-height: 20mm;
+  margin: var(--space-lg) 0 var(--space-xl);
+  break-inside: avoid;
+  align-items: center;
+}
+
+.woman-emblem-pause img {
+  display: block;
+  width: auto;
+  max-width: 31mm;
+  height: auto;
+  max-height: 22mm;
+  object-fit: contain;
+}
+
+.woman-emblem-pause--left { justify-content: flex-start; padding-left: var(--space-xl); }
+.woman-emblem-pause--center { justify-content: center; }
+.woman-emblem-pause--right { justify-content: flex-end; padding-right: var(--space-xl); }
+
+.live-book .devotional-day[data-week] .day-header {
+  display: flex;
+  min-height: 0;
+  margin: var(--space-sm) 0 var(--space-md);
+  padding: 0;
+  border: 0;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.live-book .devotional-day[data-week] .day-header::after,
+.live-book .devotional-day[data-week] .day-theme {
+  display: none;
+  content: none;
+}
+
+.live-book .devotional-day[data-week] .day-sequence {
+  position: static;
+  inset: auto;
+  display: flex;
+  width: auto;
+  align-items: baseline;
+  justify-content: center;
+  gap: var(--space-xs);
+  text-align: center;
+}
+
+.live-book .devotional-day[data-week] .day-sequence span,
+.live-book .devotional-day[data-week] .day-sequence strong {
+  display: inline;
+  margin: 0;
+  font: 400 21pt/.9 var(--font-accent-family), cursive;
+}
+
+.live-book .devotional-day[data-week] .day-header h1 {
+  max-width: 112mm;
+  margin: var(--space-xs) auto 0;
+  font-size: 30pt;
+  font-weight: 400;
+  line-height: .94;
+  hyphens: none;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.live-book .devotional-day[data-week] .day-header[data-title-length="long"] h1 {
+  max-width: 104mm;
+  font-size: 28pt;
+  line-height: .97;
+}
+
+.live-book .devotional-day[data-week] .day-header[data-title-length="short"] h1 { font-size: 32pt; }
+
+.live-book .devotional-day[data-week]
+  :is(.component-reading, .component-silence, .component-reflection, .component-christ, .component-conversation, .component-prayer, .component-keepsake, .component-heart, .component-truth, .component-song, .component-deeper-note)
+  > .component-heading {
+  --component-icon-box: 11mm;
+  position: relative;
+  display: grid;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 0;
+  margin: 0 auto var(--space-sm);
+  padding: 0;
+  grid-template-columns: var(--component-icon-box) minmax(0, max-content);
+  column-gap: var(--space-xs);
+  row-gap: var(--space-xs);
+  align-items: center;
+  justify-content: center;
+  background: none;
+  text-align: left;
+}
+
+.live-book .devotional-day[data-week]
+  :is(.component-reading, .component-silence, .component-reflection, .component-christ, .component-conversation, .component-prayer, .component-keepsake, .component-heart, .component-truth, .component-song, .component-deeper-note)
+  > .component-heading::before {
+  width: var(--component-icon-box);
+  height: var(--component-icon-box);
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.live-book .devotional-day[data-week]
+  :is(.component-reading, .component-silence, .component-reflection, .component-christ, .component-conversation, .component-prayer, .component-keepsake, .component-heart, .component-truth, .component-song, .component-deeper-note)
+  > .component-heading span {
+  max-width: 101mm;
+  color: var(--color-heading);
+  font: 400 23pt/1 var(--font-accent-family), cursive;
+  letter-spacing: 0;
+  text-transform: none;
+  text-wrap: balance;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.live-book .devotional-day[data-week]
+  :is(.component-reading, .component-silence, .component-reflection, .component-christ, .component-conversation, .component-prayer, .component-keepsake, .component-heart, .component-truth, .component-song, .component-deeper-note)
+  > .component-heading strong {
+  max-width: 101mm;
+  margin: 0;
+  color: var(--color-ink-soft);
+  font: 500 7.5pt/1.25 var(--font-label-family), sans-serif;
+  letter-spacing: .045em;
+  text-align: center;
+  text-transform: uppercase;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  justify-self: center;
+}
+
+.live-book .devotional-day[data-week]
+  :is(.component-keepsake, .component-heart)
+  > .component-heading strong {
+  text-align: center;
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+.live-book .devotional-day[data-week] .component-reading > .component-heading::before { background-image: var(--week-scripture-image, none); }
+.live-book .devotional-day[data-week] .component-silence > .component-heading::before { background-image: var(--week-silence-image, none); }
+.live-book .devotional-day[data-week] .component-reflection > .component-heading::before { background-image: var(--week-reflection-image, none); }
+.live-book .devotional-day[data-week] .component-deeper-note > .component-heading::before { background-image: var(--week-deeper-note-image, none); }
+.live-book .devotional-day[data-week] .component-christ > .component-heading::before { background-image: var(--week-christ-image, none); }
+.live-book .devotional-day[data-week] .component-conversation > .component-heading::before { background-image: var(--week-conversation-image, none); }
+.live-book .devotional-day[data-week] .component-prayer > .component-heading::before { background-image: var(--week-prayer-image, none); }
+.live-book .devotional-day[data-week] :is(.component-keepsake, .component-heart) > .component-heading::before { background-image: var(--week-heart-image, none); }
+.live-book .devotional-day[data-week] .component-truth > .component-heading::before { background-image: var(--week-truth-image, none); }
+.live-book .devotional-day[data-week] .component-song > .component-heading::before { background-image: var(--week-song-image, none); }
+
+/* As caixas variam para compensar o espaço transparente dos rasters.
+   O vão horizontal até o título permanece sempre no token --space-xs.
+   Silêncio é a exceção óptica deliberada: o vaso pendente é maior e elevado. */
+.live-book .devotional-day[data-week] .component-silence > .component-heading { --component-icon-box: 17mm; }
+.live-book .devotional-day[data-week] .component-silence > .component-heading::before { transform: translateY(-4mm); }
+.live-book .devotional-day[data-week] .component-deeper-note > .component-heading { --component-icon-box: 13mm; }
+.live-book .devotional-day[data-week] :is(.component-keepsake, .component-heart) > .component-heading { --component-icon-box: 9mm; }
+.live-book .devotional-day[data-week] .component-song > .component-heading { --component-icon-box: 15mm; }
+
+.live-book .devotional-day[data-week] .scripture-quotation {
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  max-width: 94mm;
+  margin: var(--space-md) auto var(--space-lg);
+  padding: var(--space-md);
+  border: .18mm solid color-mix(in srgb, var(--color-interior-secondary) 72%, transparent);
+  background: color-mix(in srgb, var(--color-paper) 96%, var(--color-ink));
+  color: var(--color-heading);
+  font-style: italic;
+  text-align: center;
+  break-inside: avoid;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.live-book .devotional-day[data-week] .scripture-quotation::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: .18mm;
+  background: color-mix(in srgb, var(--color-interior-secondary) 72%, transparent);
+  content: "";
+}
+
+.live-book .devotional-day[data-week] .scripture-quotation::after { content: none; }
+.live-book .devotional-day[data-week] .scripture-quotation p { margin: 0; }
+
+.live-book .devotional-day[data-week] .component-opening > blockquote:not(.scripture-quotation),
+.live-book .devotional-day[data-week] .editorial-pull-quote {
+  position: relative;
+  max-width: 90mm;
+  margin: var(--space-md) auto;
+  padding: var(--space-xs) var(--space-sm) var(--space-xs) var(--space-md);
+  border: 0;
+  border-left: .35mm solid color-mix(in srgb, var(--color-interior-secondary) 48%, transparent);
+  color: var(--color-heading);
+  font-size: 14pt;
+  line-height: 1.18;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.live-book .devotional-day[data-week] .editorial-pull-quote::before { content: none; }
+
+.live-book .devotional-day[data-week] .component-deeper-note {
+  max-width: 104mm;
+  margin: var(--space-md) auto;
+  padding: var(--space-sm) var(--space-md);
+  border: 0;
+  border-top: .15mm solid var(--color-line);
+  border-bottom: .15mm solid var(--color-line);
+  background: color-mix(in srgb, var(--color-ink) 3.5%, transparent);
+}
+
+.live-book .devotional-day[data-week] .component-silence {
+  position: relative;
+  max-width: 104mm;
+  min-height: 0;
+  margin: var(--space-md) auto var(--space-lg);
+  padding: var(--space-md);
+  border: 0;
+  background: none;
+  text-align: center;
+}
+
+.live-book .devotional-day[data-week] .component-silence::before,
+.live-book .devotional-day[data-week] .component-silence::after { content: none; }
+
+.live-book .devotional-day[data-week] .component-reflection { counter-reset: reflection-question; }
+.live-book .devotional-day[data-week] .reflection-prompt {
+  position: relative;
+  display: grid;
+  margin-bottom: var(--space-md);
+  grid-template-columns: 4.8mm minmax(0, 1fr);
+  column-gap: var(--space-sm);
+  counter-increment: reflection-question;
+}
+
+.live-book .devotional-day[data-week] .reflection-prompt::before {
+  display: flex;
+  width: 4.8mm;
+  height: 6.8mm;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  color: var(--color-ink-soft);
+  content: counter(reflection-question, decimal-leading-zero);
+  font: 400 10.5pt/.95 var(--font-accent-family), cursive;
+}
+
+.live-book .devotional-day[data-week] .reflection-prompt > p,
+.live-book .devotional-day[data-week] .reflection-prompt > .writing-lines { grid-column: 2; }
+.live-book .devotional-day[data-week] .component-reflection .reflection-prompt > p {
+  font-size: 12.5pt;
+  font-style: normal;
+  line-height: 1.28;
+  text-align: left;
+}
+
+.live-book .devotional-day[data-week] .component-christ {
+  max-width: 104mm;
+  margin: var(--space-md) auto;
+  padding: var(--space-sm) var(--space-md);
+  border: 0;
+  background: none;
+  break-inside: avoid;
+}
+.live-book .devotional-day[data-week] .component-christ::before { content: none; }
+
+.live-book .devotional-day[data-week] .component-prayer {
+  position: relative;
+  box-sizing: border-box;
+  width: 104mm;
+  max-width: 104mm;
+  margin: var(--space-md) auto;
+  padding: var(--space-md) var(--space-lg);
+  border: 0;
+  background: url("../assets/ilustracoes/specimens/oficial/semana-01-sara/raster/sara-prayer-four-straight-corners-subtle-imagegen-v004.webp?v=488b7e8") center / 100% 100% no-repeat;
+  font-style: italic;
+  text-align: left;
+  break-inside: avoid;
+}
+.live-book .devotional-day[data-week] .component-prayer::before,
+.live-book .devotional-day[data-week] .component-prayer::after { content: none; }
+.live-book .devotional-day[data-week] .component-prayer > .component-heading { margin-bottom: var(--space-sm); }
+
+.live-book .devotional-day[data-week] .component-keepsake {
+  box-sizing: border-box;
+  width: 104mm;
+  max-width: 104mm;
+  margin: var(--space-md) auto;
+  padding: var(--space-md) var(--space-lg);
+  border: .15mm solid var(--color-line);
+}
+
+.live-book .devotional-day[data-week] .component-truth {
+  box-sizing: border-box;
+  width: 104mm;
+  max-width: 104mm;
+  margin: var(--space-lg) auto var(--space-md);
+  padding: var(--space-sm);
+  border: 0;
+  border-top: .18mm solid var(--color-line);
+  border-bottom: .18mm solid var(--color-line);
+  background: transparent;
+}
+.live-book .devotional-day[data-week] .component-truth::before,
+.live-book .devotional-day[data-week] .component-truth::after { content: none; }
+
+.live-book .devotional-day[data-week] .component-song {
+  width: 100%;
+  max-width: 116mm;
+  margin: 0 auto var(--space-md);
+  padding-top: var(--space-xs);
+  border: 0;
+  text-align: center;
+}
+.live-book .devotional-day[data-week] .component-song::before { content: none; }
+
+/* A citação da canção segue o filete único aprovado no primeiro percurso. */
+.live-book .devotional-day[data-week] .component-song > blockquote {
+  max-width: 90mm;
+  margin: var(--space-sm) auto var(--space-md);
+  padding: var(--space-xs) var(--space-sm) var(--space-xs) var(--space-md);
+  border: 0;
+  border-left: .35mm solid color-mix(in srgb, var(--color-interior-secondary) 48%, transparent);
+  color: var(--color-heading);
+  text-align: center;
+}
+
+.live-book .devotional-day[data-week] .component-song > p {
+  width: 100%;
+  max-width: 90mm;
+  margin: 0 auto var(--space-md);
+  color: var(--color-heading);
+  font: 500 10.5pt/1.3 var(--font-editorial-family), serif;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.live-book .devotional-day[data-week] .component-song > p em {
+  font-style: normal;
+}
+
+.live-book .devotional-day[data-week] .component-song > .component-heading {
+  width: fit-content;
+  max-width: 118mm;
+  margin-right: auto;
+  margin-left: auto;
+  grid-template-columns: var(--component-icon-box) minmax(0, max-content) var(--component-icon-box);
+  justify-items: center;
+}
+
+.live-book .devotional-day[data-week] .component-song > .component-heading::after {
+  display: block;
+  width: var(--component-icon-box);
+  height: var(--component-icon-box);
+  background: none;
+  content: "";
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.live-book .devotional-day[data-week] .component-song > .component-heading span {
+  text-align: center;
+  grid-column: 2;
+}
+
+.live-book .devotional-day[data-week] .component-song > blockquote p {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+/* A ficha semanal preserva o ritmo original de Sara: trecho e crédito formam
+   um único parágrafo, sem compressão de largura nem linhas forçadas. */
+.live-book .devotional-day[data-week] .weekly-song-card {
+  break-inside: avoid-page;
+}
+
+.live-book .devotional-day[data-week] .weekly-song-card .weekly-song-credit {
+  color: inherit;
+  font: inherit;
+  font-style: normal;
+  white-space: nowrap;
+}
+
+/* Dorcas, Dia 7, contém duas sínteses autorais longas. A segunda inaugura uma
+   página para preservar o ritmo de leitura sem reduzir tipo, entrelinha ou
+   áreas de escrita. É uma quebra derivada do conteúdo, não uma variante do
+   componente recorrente. */
+.live-book .devotional-day[data-week="2"][data-day="7"]
+  .editorial-pull-quote ~ .editorial-pull-quote {
+  margin-top: 0;
+  break-before: page;
+}
+
+.devotional-day.volume-2[data-day="7"] .component-truth,
+.devotional-day.volume-2[data-day="7"] .component-song {
+  color: var(--color-ink);
+  background-color: transparent;
+}
+
+.devotional-day.volume-2 .day-sequence { color: var(--color-heading); }
+
+@media print {
+  a { color: inherit; text-decoration: none; }
+}

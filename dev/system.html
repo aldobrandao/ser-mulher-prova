@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>Regras do livro · Jornada Ser Mulher</title>
+  <link rel="icon" href="../assets/brand/covers/volume-1-front-figma.webp?v=488b7e8" type="image/webp">
+  <script>
+    const params = new URLSearchParams(location.search);
+    if (!params.has("embed")) location.replace("./?view=system");
+    else document.documentElement.classList.add("is-embedded");
+  </script>
+  <link rel="stylesheet" href="../book/book.css?v=488b7e8">
+  <link rel="stylesheet" href="./system.css?v=488b7e8">
+  <script src="../review-config.js?v=488b7e8"></script>
+</head>
+<body class="system-page">
+  <header class="system-hero">
+    <div>
+      <p class="system-kicker">Decisões compartilhadas por todo o livro</p>
+      <h1>O que mantém tudo coeso.</h1>
+      <p class="system-summary">Esta prancha apresenta a linguagem compartilhada pelas vinte mulheres: leitura, tipografia, imagem, componentes, páginas e produção.</p>
+    </div>
+    <div class="authority-card">
+      <span class="authority-dot"></span>
+      <div><strong>Sistema editorial vivo</strong><small>estrutura definida · direção visual em desenvolvimento</small></div>
+    </div>
+  </header>
+
+  <nav class="section-nav" aria-label="Índice das regras do livro">
+    <a class="workspace-current" href="#foundations">Fundações</a>
+    <a href="#typography">Tipografia</a>
+    <a href="#imagery">Imagens</a>
+    <a href="#components">Componentes</a>
+    <a href="#placeholders">Presença e respiro</a>
+    <a href="#pages">Páginas</a>
+    <a href="#production">Produção</a>
+    <a href="#state">Estado</a>
+  </nav>
+
+  <label class="section-jump" for="section-jump">
+    <span>Ir para uma regra</span>
+    <select id="section-jump">
+      <option value="foundations">Fundações</option>
+      <option value="typography">Tipografia</option>
+      <option value="imagery">Imagens</option>
+      <option value="components">Componentes</option>
+      <option value="placeholders">Presença e respiro</option>
+      <option value="pages">Páginas</option>
+      <option value="production">Produção</option>
+      <option value="state">Estado do projeto</option>
+    </select>
+  </label>
+
+  <main class="system-main" id="system-root" aria-live="polite">
+    <p class="system-loading">Lendo o sistema canônico…</p>
+  </main>
+
+  <script type="module" src="./system.js?v=488b7e8"></script>
+</body>
+</html>

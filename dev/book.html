@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>Livro em tempo real · Jornada Ser Mulher</title>
+  <link rel="icon" href="../assets/brand/covers/volume-1-front-figma.webp?v=488b7e8" type="image/webp">
+  <link rel="stylesheet" href="../__tokens.css?v=488b7e8">
+  <link rel="stylesheet" href="./book.css?v=488b7e8">
+  <script src="../review-config.js?v=488b7e8"></script>
+</head>
+<body>
+  <header class="book-toolbar">
+    <section class="book-navigation" aria-label="Recorte do livro">
+      <div class="book-navigation-controls">
+        <div class="book-nav-field">
+          <label for="book-scope">Mulher ou volume</label>
+          <select id="book-scope" aria-label="Escolher coleção, volume ou mulher" disabled>
+            <option>Carregando coleção…</option>
+          </select>
+        </div>
+        <div class="book-nav-field">
+          <label for="book-day">Parte da jornada</label>
+          <select id="book-day" aria-label="Ir diretamente a uma parte da jornada" disabled>
+            <option value="0">Escolha uma mulher para navegar por dia</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <details class="book-tools">
+      <summary><span>Produção</span><small>Guias e ajuda</small></summary>
+      <div class="book-tools-panel">
+        <fieldset class="book-guides" aria-describedby="book-guides-status">
+          <legend>Guias de produção</legend>
+          <div class="book-guide-options">
+            <label><input type="checkbox" data-book-guide="trim"> <span>Corte</span></label>
+            <label><input type="checkbox" data-book-guide="bleed"> <span>Sangria</span></label>
+            <label><input type="checkbox" data-book-guide="safe"> <span>Área segura</span></label>
+            <label><input type="checkbox" data-book-guide="binding"> <span>Reserva interna</span></label>
+          </div>
+          <small id="book-guides-status" role="status" aria-live="polite">Guias desligadas. A reserva acompanha o lado interno de cada página e permanece provisória até o gabarito da gráfica.</small>
+        </fieldset>
+
+        <section class="book-help" aria-label="Como navegar no livro">
+          <span>Como navegar</span>
+          <p>Esta é uma prévia do livro impresso em 160 × 230 mm. Escolha uma mulher e um dia; use o zoom do leitor apenas para ampliar a página na tela.</p>
+          <small id="book-page-status" role="status" aria-live="polite">Preparando a medição da prévia impressa.</small>
+        </section>
+      </div>
+    </details>
+
+    <dl class="book-metrics visually-hidden" aria-label="Estatísticas do recorte atual">
+      <div class="metric-pages"><dt>Páginas</dt><dd id="metric-pages">—</dd></div>
+      <div><dt>Mulheres</dt><dd id="metric-women">—</dd></div>
+      <div><dt>Dias</dt><dd id="metric-days">—</dd></div>
+      <div><dt>Volumes</dt><dd id="metric-volumes">—</dd></div>
+    </dl>
+
+  </header>
+
+  <main class="book-stage">
+    <div class="book-loading" id="book-loading" role="status">Montando a prévia do impresso…</div>
+    <iframe id="book-viewer" title="Livro paginado" src="about:blank"></iframe>
+  </main>
+
+  <script type="module" src="./book.js?v=488b7e8"></script>
+</body>
+</html>

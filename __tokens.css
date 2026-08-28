@@ -1,0 +1,124 @@
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("./assets/fonts/cormorant-garamond/static/CormorantGaramond-Regular.ttf?v=488b7e8") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("./assets/fonts/cormorant-garamond/static/CormorantGaramond-Medium.ttf?v=488b7e8") format("truetype");
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("./assets/fonts/cormorant-garamond/static/CormorantGaramond-SemiBold.ttf?v=488b7e8") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("./assets/fonts/cormorant-garamond/static/CormorantGaramond-Italic.ttf?v=488b7e8") format("truetype");
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("./assets/fonts/cormorant-garamond/static/CormorantGaramond-MediumItalic.ttf?v=488b7e8") format("truetype");
+  font-style: italic;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/poppins/Poppins-Regular.ttf?v=488b7e8") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/poppins/Poppins-SemiBold.ttf?v=488b7e8") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Glendora";
+  src: url("./assets/fonts/glendora/Glendora.otf?v=488b7e8") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+:root {
+  --color-brand-volume-1: #405e6c;
+  --color-brand-volume-2: #6d313a;
+  --color-brand-burgundy: #6c353b;
+  --color-brand-cream: #e4ddd5;
+  --color-brand-blue-light: #c6dfeb;
+  --color-brand-rose: #d7bcbf;
+  --color-brand-sand: #d5b089;
+  --color-paper: #f3ebdd;
+  --color-paper-deep: #e7d4b3;
+  --color-ink: #262626;
+  --color-interior-heading: #1a1a1a;
+  --color-interior-secondary: #595959;
+  --color-interior-ornament: #333333;
+  --color-interior-rule: #b3b3b3;
+  --color-interior-wash: #e6e6e6;
+  --color-ink-soft: #595959;
+  --color-glass-sky: #99a7a9;
+  --color-glass-teal: #687370;
+  --color-glass-blush: #bc886c;
+  --color-glass-wine: #855349;
+  --color-glass-ochre: #c29470;
+  --color-came-bronze: #825a3c;
+  --color-white: #ffffff;
+  --color-page-background: var(--color-paper);
+  --color-text-primary: var(--color-ink);
+  --color-text-secondary: var(--color-interior-secondary);
+  --color-line: var(--color-interior-rule);
+  --color-heading: var(--color-interior-heading);
+  --color-meditative-surface: var(--color-interior-wash);
+  --color-prayer-mark: var(--color-interior-ornament);
+  --color-accent-quiet: var(--color-interior-secondary);
+  --color-accent-growth: var(--color-interior-ornament);
+  --color-accent-tender: var(--color-interior-secondary);
+  --color-accent-depth: var(--color-interior-heading);
+  --color-accent-light: var(--color-interior-rule);
+  --color-volume-1-background: var(--color-brand-volume-1);
+  --color-volume-2-background: var(--color-brand-volume-2);
+  --color-brand-on-brand: var(--color-brand-cream);
+  --space-hairline: 0.25mm;
+  --space-xs: 1.5mm;
+  --space-sm: 3mm;
+  --space-md: 5mm;
+  --space-lg: 8mm;
+  --space-xl: 12mm;
+  --space-xxl: 18mm;
+  --stroke-subtle: 0.35mm;
+  --stroke-quote: 0.4mm;
+  --stroke-emphasis: 0.8mm;
+  --stroke-image: 0.36mm;
+  --font-editorial-family: "Cormorant Garamond";
+  --font-label-family: "Poppins";
+  --font-accent-family: "Glendora";
+  --reading-size: 11.6pt;
+  --reading-leading: 16pt;
+  --reading-weight: 400;
+  --label-size: 7.5pt;
+  --label-leading: 10pt;
+  --label-weight: 600;
+  --display-weight: 500;
+  --trim-width: 160mm;
+  --trim-height: 230mm;
+  --bleed: 3mm;
+  --margin-top: 17mm;
+  --margin-bottom: 19mm;
+  --margin-inner: 22mm;
+  --margin-outer: 15mm;
+}
